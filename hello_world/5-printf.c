@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /*
 * main - Entry point
 * Description: This function is to display a message using printf
