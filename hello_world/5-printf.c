@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * Function main - Entry point
+ * main - Entry point
  *
  * Description: This function is the main entry point of the program and
  * it displays a message using printf.
