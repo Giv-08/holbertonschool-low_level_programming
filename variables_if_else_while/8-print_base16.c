@@ -15,7 +15,7 @@ int main(void)
 		putchar('0' + number);
 		number++;
 	}
-	number = 'a'
+	number = 'a';
 	 while (number < g)
 	{
 		putchar(number);
