@@ -16,7 +16,8 @@ int main(void)
 		number++;
 	}
 	number = 'a';
-	 while (number < 'g')
+
+	while (number < 'g')
 	{
 		putchar(number);
 		number++;
