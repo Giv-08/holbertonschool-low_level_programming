@@ -2,7 +2,8 @@
 
 /**
 * main - Entry point
-* Description: 'This function is to display a message using puts'
+* Description: 'This function is to display
+* all lowercase alphabet except e and q'
 * Return: Always 0 (Success)
 */
 int main(void)
