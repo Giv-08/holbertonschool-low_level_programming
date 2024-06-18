@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h>t++;
 
 /**
 * main - Entry point
@@ -15,8 +15,8 @@ int main(void)
 	while (alphabet <= 'z' && alphabet_up <= 'Z')
 	{
 		putchar(alphabet);
-		putchar(alphabet_up);
 		alphabet++;
+		putchar(alphabet_up);
 		alphabet_up++;
 	}
 	putchar('\n');
