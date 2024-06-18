@@ -1,13 +1,12 @@
 #include <stdio.h>
 
 /**
-* main - Entry point
-* Description: 'This function prints _putchar
-* Return: Always 0 (Success)
-*/
-
+ * main - Entry point
+ * Description: This function prints _putchar followed by a new line using only putchar
+ * Return: Always 0 (Success)
+ */
 int main(void)
-}
+{
 	putchar('_');
 	putchar('p');
 	putchar('u');
