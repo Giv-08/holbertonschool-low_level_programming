@@ -10,9 +10,9 @@
 
 	while (number < 10)
 	{
-	putchar(number);
+	putchar(int number);
 	number++;
 	}
-	putchar("\n");
+	putchar('\n');
 	return (0);
 }
