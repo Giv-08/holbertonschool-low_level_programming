@@ -15,12 +15,12 @@ int main(void)
 		putchar('0' + number);
 		number++;
 	}
-	number = 'a';
+	char alphabet = 'a';
 
-	while (number < 'g')
+	while (alphabet < 'g')
 	{
-		putchar(number);
-		number++;
+		putchar(alphabet);
+		alphabet++;
 	}
 	putchar('\n');
 	return (0);
