@@ -11,14 +11,14 @@ int main(void)
 	char number;
 
 	number = '0';
-	while (number < 9)
+	while (number <= 9)
 	{
 		putchar(number);
 		number++;
 	}
 	number = 'a';
 
-	while (number < 'g')
+	while (number <= 'f')
 	{
 		putchar(number);
 		number++;
