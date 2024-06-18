@@ -11,18 +11,14 @@ int main(void)
 	char number;
 	char alphabet;
 
-	number = '0';
-	while (number <= 9)
+	for (number = '0'; number <= 9; number++)
 	{
 		putchar(number);
-		number++;
 	}
-	alphabet = 'a';
 
-	while (alphabet <= 'f')
+	for (alphabet = 'a'; alphabet <= 'f'; alphabet++)
 	{
 		putchar(alphabet);
-		alphabet++;
 	}
 	putchar('\n');
 	return (0);
