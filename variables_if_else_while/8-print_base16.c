@@ -9,6 +9,7 @@
 int main(void)
 {
 	char number;
+	char alphabet;
 
 	number = '0';
 	while (number <= 9)
@@ -16,12 +17,12 @@ int main(void)
 		putchar(number);
 		number++;
 	}
-	number = 'a';
+	alphabet = 'a';
 
-	while (number <= 'f')
+	while (alphabet <= 'f')
 	{
-		putchar(number);
-		number++;
+		putchar(alphabet);
+		alphabet++;
 	}
 	putchar('\n');
 	return (0);
