@@ -12,12 +12,15 @@ int main(void)
 	char alphabet = 'a';
 	char alphabet_up = 'A';
 
-	while (alphabet <= 'z' && alphabet_up <= 'Z')
+	while (alphabet <= 'z')
 	{
 		putchar(alphabet);
 		alphabet++;
-		putchar(alphabet_up);
-		alphabet_up++;
+	}
+	while (alphabet_up <= 'Z')
+        {
+                putchar(alphabet_up);
+                alphabet_up++;
 	}
 	putchar('\n');
 	return (0);
