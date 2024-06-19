@@ -6,11 +6,13 @@
 * followed by a new line using write
 */
 
-void print_alphabet(void);
+void print_alphabet_x10(void);
 
 void print_alphabet_x10(void)
 {
 	char *str = "abcdefghijklmnopqrstuvwxyz\n";
-
-	write(10, str, 27);
+	for (int i = 0; i < 10; i++)
+	{
+		write(1, str, 27);
+	}
 }
