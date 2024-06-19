@@ -16,8 +16,8 @@ void print_alphabet(void)
 
 	while (alphabet <= 'z')
 	{
-		write(1, &alphabet, 1);
+		fwrite(1, &alphabet, 1);
 		alphabet++;
 	}
-	write(1, "\n", 1);
+	fwrite(1, "\n", 1);
 }
