@@ -1,5 +1,5 @@
 #include <unistd.h>
-
+#include "main.h"
 /**
 * print_alphabet_x10 - Prints the lowercase alphabet
 * Description: This function prints a-z 10 times
