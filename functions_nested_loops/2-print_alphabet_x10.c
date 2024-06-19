@@ -8,6 +8,6 @@
 
 void print_alphabet_x10(void)
 {
-	_putchar("abcdefghijklmnopqrstuvwxyz\n");
+	char *str = "abcdefghijklmnopqrstuvwxyz\n";
 	write(1, str, 27);
 }
