@@ -1,23 +1,16 @@
-#include <stdio.h>
-#include "main.h"
+#include <unistd.h>
 
 /**
 * main - Entry point
-* Description: This function prints the alphabet, in lowercase,
-* followed by a new line.
-* Prototype: void print_alphabet(void);
+* Description: This function prints a-z followed by a new line using write
 * Return: Always 0 (Success)
 */
+
 void print_alphabet(void);
 
 void print_alphabet(void)
 {
-	char alphabet = 'a';
-
-	while (alphabet <= 'z')
-	{
-		putchar(alphabet);
-		alphabet++;
-	}
-	putchar("\n");
+char *str = "abcdefghijklmnopqrstuvwxyz\n";`
+write(1, str, 27);`
+return (0);`
 }
