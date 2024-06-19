@@ -10,7 +10,7 @@ void print_alphabet(void);
 
 void print_alphabet(void)
 {
-char *str = "abcdefghijklmnopqrstuvwxyz\n";`
-write(1, str, 27);`
-return (0);`
+char *str = "abcdefghijklmnopqrstuvwxyz\n";
+write(1, str, 27);
+return (0);
 }
