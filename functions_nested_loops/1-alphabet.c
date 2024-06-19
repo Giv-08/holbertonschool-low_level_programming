@@ -1,7 +1,7 @@
 #include <unistd.h>
 
 /**
-* main - Entry point
+* print_alphabet - Prints the lowercase alphabet followed by a newline
 * Description: This function prints a-z followed by a new line using write
 * Return: Always 0 (Success)
 */
