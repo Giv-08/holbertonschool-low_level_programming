@@ -9,18 +9,11 @@
 */
 void print_alphabet(void)
 {
-	char letter;
+	char alphabet[] = "abcdefghijklmnopqrstuvwxyz\n";
+	int i;
 
-	letter = 'a';
-	while (letter <= 'z')
+	for (i = 0; alphabet[i] != '\0'; i++)
 	{
-		putchar(letter);
-		letter++;
+		_putchar(alphabet[i]);
 	}
-}
-
-int main(void)
-{
-	print_alphabet();
-	return (0);
 }
