@@ -10,6 +10,6 @@ void print_alphabet_x10(void);
 
 void print_alphabet_x10(void)
 {
-	char *str = "abcdefghijklmnopqrstuvwxyz\n";
+	_putchar("abcdefghijklmnopqrstuvwxyz\n");
 	write(1, str, 27);
 }
