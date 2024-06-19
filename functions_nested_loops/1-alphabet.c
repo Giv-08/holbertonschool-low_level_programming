@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <unistd.h>
+
 /**
 * main - Entry point
 * Description: This function prints the alphabet, in lowercase,
@@ -9,20 +9,8 @@
 */
 void print_alphabet(void);
 
-void print_alphabet(void)
-{
-	char alphabet = 'a';
-
-	while (alphabet <= 'z')
-	{
-		putchar(alphabet);
-		alphabet++;
-	}
-	putchar('\n');
-}
-
 int main(void)
 {
 	print_alphabet();
-	return 0;
+	return (0);
 }
