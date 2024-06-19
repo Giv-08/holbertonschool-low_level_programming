@@ -1,7 +1,7 @@
 #include <unistd.h>
 
 /**
-* print_alphabet - Prints the lowercase alphabet
+* print_alphabet_x10 - Prints the lowercase alphabet
 * Description: This function prints a-z 10 times
 * followed by a new line using write
 */
