@@ -10,7 +10,7 @@
 */
 void print_alphabet(void);
 
-void print_alphabet()
+void print_alphabet(void)
 {
 	char alphabet = 'a';
 
@@ -24,5 +24,6 @@ void print_alphabet()
 
 int main(void)
 {
+	print_alphabet();
 	return (0);
 }
