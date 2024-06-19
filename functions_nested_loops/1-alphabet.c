@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
 * main - Entry point
@@ -7,6 +8,8 @@
 * Prototype: void print_alphabet(void);
 * Return: Always 0 (Success)
 */
+void print_alphabet(void);
+
 void print_alphabet(void)
 {
 	char alphabet = 'a';
@@ -17,4 +20,9 @@ void print_alphabet(void)
 		alphabet++;
 	}
 	putchar('\n');
+}
+
+int main(void)
+{
+	return (0);
 }
