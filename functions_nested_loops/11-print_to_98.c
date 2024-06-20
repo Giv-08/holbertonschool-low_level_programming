@@ -2,19 +2,18 @@
 #include "main.h"
 
 /**
-* print_to_98 - Prints all natural numbers from 'n' to 98,
-* followed by a new line
-* @n: is an interger taken as a parameter
-* Return: Always returns 0 (success)
+* print_number - Prints an integer using _putchar
+* @n: The integer to be printed
+* Description: This function prints an integer using the _putchar function.
 */
 
 void print_number(int n)
 {
 	if (n < 0)
 	{
- 		_putchar('-');
+		_putchar('-');
 		n = -n;
-    }
+	}
 
 	if (n / 10)
 	{
@@ -22,6 +21,14 @@ void print_number(int n)
 	}
 	_putchar(n % 10 + '0');
 }
+
+/**
+* print_to_98 - Prints all natural numbers from 'n' to 98,
+* followed by a new line
+* @n: is an interger taken as a parameter
+* Return: Always returns 0 (success)
+*
+*/
 
 void print_to_98(int n)
 {
