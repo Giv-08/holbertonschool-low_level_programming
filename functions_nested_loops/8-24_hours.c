@@ -4,7 +4,6 @@
 /**
 * jack_bauer - Print every minute of the day Jack Bauer
 * from 00:00 to 23:59
-* @n: The integer to check
 * Return: Always returns 0 (Success)
 */
 
