@@ -8,16 +8,34 @@
 
 void times_table(void)
 {
-	int i, m;
+	int i, m, n, o, p;
 
 	for (i = 0; i <= 9; i++)
 	{
 		for (m = 0; m <= 9; m++)
 		{
-			if (m != 0)
-				printf(", ");
-			printf("%2d", i * m);
+			n = i * m;
+
+			if (n > 9)
+			{
+				o = n % 10;
+				p = (n - o) / 10;
+				_putchar(44);
+				_putchar(32);
+				_putchar(p + '0');
+				_putchar(o + '0');
+			}
+			else
+			{
+				if (m != 0)
+				{
+					_putchar(44);
+					_putchar(32);
+					_putchar(32);						
+				}
+				_putchar(n + '0');
+			}
 		}
-		printf("\n");
+		_putchar('\n');
 	}
 }
