@@ -17,8 +17,8 @@ int main(void)
 		{
 			for (o = n + 1; 0 < 10; o++)
 			{
-				putchar(n + '0');
 				putchar(m + '0');
+				putchar(n + '0');
 				putchar(o + '0');
 			}
 		if (n != 7 || m != 8 || o != 9)
