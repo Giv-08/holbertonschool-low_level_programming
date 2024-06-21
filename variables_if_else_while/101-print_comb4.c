@@ -20,12 +20,13 @@ int main(void)
 				putchar(m + '0');
 				putchar(n + '0');
 				putchar(o + '0');
+			
+				if (m != 7 || n != 8 || o != 9)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
-		if (m != 7 || n != 8 || o != 9)
-		{
-			putchar(',');
-			putchar(' ');
-		}
 		}
 	}
 	putchar('\n');
