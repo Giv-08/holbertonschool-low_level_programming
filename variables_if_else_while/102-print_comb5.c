@@ -3,7 +3,7 @@
 /**
 * main - Entry point
 * Description: 'This function displays all possible
-* combinations of four-digit numbers
+* combinations of  two two-digit numbers
 * Return: Always 0 (Success)
 */
 
