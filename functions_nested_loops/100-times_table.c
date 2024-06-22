@@ -6,14 +6,13 @@
 * if n is greater than 15 or less than 0 the function should not print anything
 * followed by a new line
 * @n: is an interger taken as a parameter
-* Return: Always returns 0 (success)
 */
 
 void print_times_table(int n)
 {
 	int a, b, cal;
 
-	if (n == 0 || n > 15)
+	if (n < 0 || n > 15)
 	{
 		return;
 	}
