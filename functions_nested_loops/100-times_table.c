@@ -11,12 +11,12 @@
 
 void print_times_table(int n)
 {
+	int a, b, cal;
+
 	if (n == 0 || n > 15)
 	{
 		return;
 	}
-
-	int a, b, cal;
 
 	for (a = 0; a <= n; a++)
 	{
@@ -49,5 +49,5 @@ void print_times_table(int n)
 			_putchar((cal % 10) + '0');
 		}
 		_putchar('\n');
-
+	}
 }
