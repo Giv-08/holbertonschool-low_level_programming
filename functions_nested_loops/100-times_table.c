@@ -20,34 +20,27 @@ void print_times_table(int n)
 
 	for (a = 0; a <= n; a++)
 	{
-		for (b = 0; b <= n; n++)
+		for (b = 0; b <= n; b++)
 		{
 			cal = a * b;
 
-			if (b != 0)
-			{
-				_putchar(',');
-				_putchar(' ');
+		if (b != 0)
+		{
+			_putchar(',');
+			_putchar(' ');
 
-				if (cal < 10)
-				{
-					_putchar(' '), _putchar(' ');
-				}
-				else if (cal < 100)
-				{
-					_putchar(' ');
-				}
-			}
-			if (cal >= 100)
-			{
-				_putchar((cal / 100) + '0');
-			}
-			else if (cal >= 10)
-			{
-				_putchar(((cal / 100) % 10) + '0');
-			}
-			_putchar((cal % 10) + '0');
+		if (cal < 10)
+			_putchar(' '), putchar(' ');
+		else if (cal < 100)
+			_putchar(' ');
 		}
-		_putchar('\n');
+
+		if (cal >= 100)
+			_putchar((cal / 100) + '0');
+		if (cal >= 10)
+			_putchar(((cal / 10) % 10) + '0');
+		_putchar((cal % 10) + '0');
+		}
+	_putchar('\n');
 	}
 }
