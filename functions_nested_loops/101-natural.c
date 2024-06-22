@@ -22,6 +22,7 @@ int main(void)
 		i++;
 	}
 
-	putchar(sum + '0');
+	printf("%d\n", sum);
+	fflush(stdout);
 	return (0);
 }
