@@ -14,12 +14,12 @@ int main(void)
 	long int next;
 	int count = 2;
 
-	printf("%ld", "%ld", fib_one, fib_two);
+	printf("%ld, %ld", fib_one, fib_two);
 
 	while (count < 50)
 	{
 		next = fib_one + fib_two;
-		printf(" ,%ld", next);
+		printf(", %ld", next);
 
 		fib_one = fib_two;
 		fib_two = next;
