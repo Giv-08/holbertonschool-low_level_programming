@@ -30,7 +30,7 @@ void print_times_table(int n)
 			_putchar(' ');
 
 		if (cal < 10)
-			_putchar(' '), putchar(' ');
+			_putchar(' '), _putchar(' ');
 		else if (cal < 100)
 			_putchar(' ');
 		}
