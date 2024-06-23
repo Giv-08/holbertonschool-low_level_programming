@@ -15,7 +15,7 @@ int main(void)
 	int next;
 	int count = 2;
 
-	while (count <= 98)
+	while (count < 98)
 	{
 
 		next = fib_one + fib_two;
