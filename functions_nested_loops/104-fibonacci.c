@@ -13,7 +13,7 @@ int main(void)
 	int fib_one = 1;
 	int fib_two = 2;
 	int next;
-	int count = 0;
+	int count = 2;
 
 	while (count <= 98)
 	{
