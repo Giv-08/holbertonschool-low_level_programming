@@ -15,7 +15,6 @@ int main(void)
 	long int next;
 	int sum = 2;
 
-	printf("%ld, %ld", fib_one, fib_two);
 	while (fib_two <= 4000000)
 	{
 		next = fib_one + fib_two;
