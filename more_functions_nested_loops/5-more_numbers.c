@@ -9,13 +9,20 @@
 void more_numbers(void)
 {
 
-	long int row, num;
+	int row, num;
 
 	for (row = 0; row < 10; row++)
 	{
 		for (num = 0; num <= 14; num++)
 		{
-			_putchar(num + '0');
+			if (num > 9)
+			{
+				_putchar((num - 10) + 48);
+			}
+			else
+			{
+				_putchar(num + '0');
+			}
 		}
 		_putchar('\n');
 
