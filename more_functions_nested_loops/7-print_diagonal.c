@@ -10,6 +10,7 @@
 void print_diagonal(int n)
 {
 	int count = 0;
+	int i = 0;
 
 	if (n <= 0)
 	{
@@ -19,7 +20,10 @@ void print_diagonal(int n)
 	{
 		while (count < n)
 		{
-			_putchar(count * ' ');
+			while (i < count)
+			{
+				_putchar(' ');	
+			}
 			_putchar('\\');
 			_putchar('\n');
 			count++;
