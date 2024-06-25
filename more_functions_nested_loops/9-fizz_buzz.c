@@ -26,7 +26,7 @@ int main(void)
 		{
 			printf("%s", "Buzz");
 		}
-		
+
 			if (i % 3 != 0 && i % 5 != 0)
 			{
 				printf("%d ", i);
