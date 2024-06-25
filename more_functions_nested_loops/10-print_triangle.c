@@ -22,9 +22,9 @@ void print_triangle(int size)
 
 		for (count = 0; count < size; count++)
 		{	
-			for (i = 0; i < size; i++)
+			for (i = 2; i < size; i++)
 			{
-				for (j = 0; j < size; j++)
+				for (j = 1; j < size; j++)
 				{
 					_putchar(' ');
 				}
