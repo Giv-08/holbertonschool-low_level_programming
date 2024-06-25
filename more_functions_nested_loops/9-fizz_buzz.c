@@ -22,7 +22,7 @@ int main(void)
 		{
 			printf("%s", "FizzBuzz");
 		}
-		printf("%d\n", i);
+		printf("%d32", i);
 	}
 	return (0);
 }
