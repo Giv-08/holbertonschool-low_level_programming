@@ -24,10 +24,10 @@ void print_triangle(int size)
 		{	
 			for (space = 0; space < size; space++)
 			{
-				for (hash = 0; hash < size; hash++)
-				{
-					_putchar(' ');
-				}
+				_putchar(' ');
+			}
+			for (hash = 0; hash < size; hash++)
+			{
 				_putchar('#');
 			}
 			_putchar('\n');
