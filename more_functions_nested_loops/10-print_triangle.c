@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
-* print_square - Prints a triangle
+* print_triangle - Prints a triangle
 * followed by a new line
 * @size: Represent "#"
 */
@@ -21,12 +21,13 @@ void print_triangle(int size)
 
 		for (count = 0; count < size; count++)
 		{
+			_putchar(' ');
+
 			for (i = 0; i < size; i++)
-			{
-				_putchar(' ');
 			}
-			_putchar('#');
-			_putchar('\n');
+	       			_putchar('#');
+				_putchar('\n');
+			}
 		}
 	}
 }
