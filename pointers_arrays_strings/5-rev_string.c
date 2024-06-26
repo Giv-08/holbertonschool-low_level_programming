@@ -16,17 +16,15 @@ void rev_string(char *s)
 		length++;
 	}
 
-	for (i = length - 1; i > 0; i--)
+	for (i = 0; i < length; i++)
 	{
-		if (i == 0)
-		{
-			_putchar(*s++);
+		_putchar(s[i]);
+	}
+	_putchar('\n');
 
-		}
-		else
-		{
-			_putchar(s[i]);
-		}
+	for (i = length - 1; i >= 0; i--)
+	{
+		_putchar(s[i]);
 	}
 	_putchar('\n');
 }
