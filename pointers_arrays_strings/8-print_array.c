@@ -20,7 +20,7 @@ void print_array(int *a, int n)
 
 		for (i = 0; i < n; i++)
 		{
-			if (i == n)
+			if (i == -1)
 			{
 				printf("%d", a[i]);
 			}
