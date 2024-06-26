@@ -15,11 +15,12 @@ void print_array(int *a, int n)
 
 	while (a[length] != '\0')
 	{
+		length++;
+	}
+
 		for (i = 0; i < n; i++)
 		{
 			printf("%d, ", a[i]);
 		}
-		length++;
-	}
 }
 
