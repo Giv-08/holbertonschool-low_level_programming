@@ -11,12 +11,13 @@
 void print_array(int *a, int n)
 {
 	int length = 0;
+	int i;
 
 	while (a[length] != '\0')
 	{
-		for (n = 0; n < length - 1; n++)
+		for (i = 0; i < n; i++)
 		{
-			printf("%d, ", a[length]);
+			printf("%d, ", a[i]);
 		}
 		length++;
 	}
