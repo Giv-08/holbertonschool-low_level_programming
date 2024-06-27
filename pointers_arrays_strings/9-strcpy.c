@@ -11,6 +11,9 @@
 
 char *_strcpy(char *dest, char *src)
 {
-	printf("%s\n", src);
+	while (*src != '\0')
+	{
+		printf("%p\n", src);
+	}
 	return (dest);
 }
