@@ -11,13 +11,7 @@
 
 char *_strcpy(char *dest, char *src)
 {
-	char temp;
-
 	printf("%s\n", src);
-	
-	src = &temp;
-	temp = *dest;
-
 	printf("%s\n", dest);
 
 	return (dest);
