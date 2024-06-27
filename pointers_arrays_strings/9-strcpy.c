@@ -16,7 +16,6 @@ char *_strcpy(char *dest, char *src)
 		*dest = *src;
 		printf("%s1\n", dest);
 		src++;
-		printf("%s2\n", dest);
 	}
 	*dest = '\0';
 	return (dest);	
