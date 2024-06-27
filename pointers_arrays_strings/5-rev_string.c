@@ -15,18 +15,11 @@ void rev_string(char *s)
 	{
 		length++;
 	}
-
-	for (i = 0; i < length; i++)
-	{
-		_putchar(s[i]);
-		printf("%c 1 /n", s[i]);
-	}
-	_putchar('\n');
 	
 	for (i = length - 1; i >= 0; i--)
 	{
 		_putchar(s[i]);
-		printf("%c 2 /n", s[i]);
 	}
+	_putchar('\n');
 
 }
