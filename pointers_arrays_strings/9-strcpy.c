@@ -13,10 +13,10 @@ char *_strcpy(char *dest, char *src)
 {
 	while (*src != '\0')
 	{
-		dest = src;
 		src++;
 		dest++;
 	}
+	dest = src;
 	printf("%s s \n", src);
 	printf("%s d \n", dest);
 	return (dest);	
