@@ -13,7 +13,7 @@ char *_strcpy(char *dest, char *src)
 {
 	while (*src != '\0')
 	{
-		printf("%p\n", src);
+		printf("%c\n", *src);
 	}
 	return (dest);
 }
