@@ -11,11 +11,11 @@
 
 char *_strcpy(char *dest, char *src)
 {
-	printf("%s", src);
+	printf("%s\n", src);
 	while (*src != '\0')
 	{
 		src++;
-		printf("%sloop", src);
+		printf("%sloop\n", src);
 	}
 
 	return (dest);
