@@ -12,12 +12,6 @@
 char *_strncat(char *dest, char *src, int n)
 {
 	char *temp = dest;
-	int length = 0;
-
-	if (dest[length] <= n)
-        {
-                printf("%d", dest[length]);
-        }
 
 	while (*dest != '\0')
 	{
