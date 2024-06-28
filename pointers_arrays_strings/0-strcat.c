@@ -12,14 +12,12 @@
 */
 char *_strcat(char *dest, char *src)
 {
-	char *temp;
+	char *temp = dest;
 
 	while (*dest != '\0')
 	{
 		dest++;
 	}
-
-		temp = dest;
 	printf("\n ");
 	printf("%s printf dest  \n ", dest);
 	printf("%s printf  tmp \n ", temp);
