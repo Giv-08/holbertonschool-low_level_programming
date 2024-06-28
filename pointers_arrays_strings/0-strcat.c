@@ -12,13 +12,19 @@
 */
 char *_strcat(char *dest, char *src)
 {
+	char *temp;
 
 	while (*dest != '\0')
 	{
 		dest++;
 	}
-	printf("%s printf   \n ", dest);
+
+		temp = dest;
+	printf("\n ");
+	printf("%s printf dest  \n ", dest);
+	printf("%s printf  tmp \n ", temp);
 	printf("%s printf  src   \n", src);
+	printf("\n ");
 
 	while (*src != '\0')
 	{
@@ -26,8 +32,11 @@ char *_strcat(char *dest, char *src)
 		src++;
 		dest++;
 	}
-	printf("%s printf    \n", dest);
+	printf("%s printf dest \n", dest);
+	printf("%s printf  tmp \n ", temp);
 	printf("%s printf  src   \n", src);
+	printf("\n ");
+
 	*dest = '\0';
 	return (dest);
 }
