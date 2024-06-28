@@ -3,9 +3,10 @@
 
 /**
 * *_strncpy -  copies a string
-* @dest - Task char '*dest' as parameter
-* @src - Task char '*src' as parameter
-* @n - Task int 'n' as parameter
+* @dest: - Task char '*dest' as parameter
+* @src: - Task char '*src' as parameter
+* @n: - Task int 'n' as parameter
+* Return: temp as a starting address of *dest
 */
 
 char *_strncpy(char *dest, char *src, int n)
@@ -20,11 +21,7 @@ char *_strncpy(char *dest, char *src, int n)
 		src++;
 		i++;
 	}
-	
-	printf("%s dest \n", dest);
-	printf("%s src \n", src);
-	printf("%s temp \n", temp);
 
 	dest = '\0';
-	return(temp);
+	return (temp);
 }
