@@ -27,7 +27,7 @@ char *_strcat(char *dest, char *src)
 		dest++;
 	}
 
-	printf("%s printf     ", src);
+	printf("%s printf  src   ", src);
 	*dest = '\0';
 	return (original_dest);
 }
