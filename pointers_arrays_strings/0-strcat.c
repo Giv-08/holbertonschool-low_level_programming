@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
-* *_strcat - Concatenates two strings 
+* *_strcat - Concatenates two strings
 * appends the src string to the dest string, overwriting
 * the terminating null byte (\0) at the end of dest, and
 * then adds a terminating null byte
@@ -10,6 +10,7 @@
 * @src: Take char '*src' as parameter
 * Return: return a pointer to the resulting string dest
 */
+
 char *_strcat(char *dest, char *src)
 {
 	char *temp = dest;
@@ -18,11 +19,6 @@ char *_strcat(char *dest, char *src)
 	{
 		dest++;
 	}
-	printf("\n ");
-	printf("%s printf dest  \n ", dest);
-	printf("%s printf  tmp \n ", temp);
-	printf("%s printf  src   \n", src);
-	printf("\n ");
 
 	while (*src != '\0')
 	{
@@ -30,10 +26,6 @@ char *_strcat(char *dest, char *src)
 		src++;
 		dest++;
 	}
-	printf("%s printf dest \n", dest);
-	printf("%s printf  tmp \n ", temp);
-	printf("%s printf  src   \n", src);
-	printf("\n ");
 
 	*dest = '\0';
 	return (temp);
