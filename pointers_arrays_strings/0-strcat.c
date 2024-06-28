@@ -26,6 +26,8 @@ char *_strcat(char *dest, char *src)
 		src++;
 		dest++;
 	}
+
+	printf("%s printf     ", src);
 	*dest = '\0';
 	return (original_dest);
 }
