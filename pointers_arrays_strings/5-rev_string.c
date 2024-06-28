@@ -29,5 +29,4 @@ void rev_string(char *s)
 		begin_pointer++;
 		end_pointer--;
 	}
-	_putchar('\n');
 }
