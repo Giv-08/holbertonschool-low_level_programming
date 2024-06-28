@@ -11,15 +11,22 @@ void rev_string(char *s)
 {
 	int i;
 	int length = 0;
-
+	char *begin_pointer, *end_pointer, character;
 	while (s[length] != '\0')
 	{
 		length++;
 	}
+	
+	begin_pointer = s;
+	end_pointer = s + (length - 1);
 
-	for (i = length - 1; i >= 0; i--)
+	for (i = 0; i < (length - 1)/ 2; i++)
 	{
-		_putchar(s[i]);
+		character = *end_pointer;
+		*end_pointer = *begin_pointer;
+		*begin_pointer = character;
+		begin_pointer++;
+		end_pointer--;
 	}
 	_putchar('\n');
 }
