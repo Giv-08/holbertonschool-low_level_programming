@@ -26,9 +26,9 @@ char *_strncat(char *dest, char *src, int n)
 		dest++;
 	}
 
-	while (temp[length] <= n)
+	while (dest[length] <= n)
 	{
-		temp++;
+		dest++;
 	}
 
 	return (temp);
