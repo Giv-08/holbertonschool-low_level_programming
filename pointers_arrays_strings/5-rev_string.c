@@ -12,12 +12,12 @@ void rev_string(char *s)
 	int i;
 	int length = 0;
 	char *begin_pointer, *end_pointer, character;
-	
+
 	while (s[length] != '\0')
 	{
 		length++;
 	}
-	
+
 	begin_pointer = s;
 	end_pointer = s + (length - 1);
 
