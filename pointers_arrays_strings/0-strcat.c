@@ -36,5 +36,5 @@ char *_strcat(char *dest, char *src)
 	printf("\n ");
 
 	*dest = '\0';
-	return (dest);
+	return (src);
 }
