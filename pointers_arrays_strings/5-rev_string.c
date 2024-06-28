@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -8,11 +9,12 @@
 
 void rev_string(char *s)
 {
-	int length = 0;
+	int len;
+	len = strlen(s);
 
- 	while (s[length] == '\0')
+ 	while (s[len] == '\0')
        	{
-		_putchar(s[length]);
+		_putchar(s[len]);
 		s--;
         }	
 	_putchar('\n');
