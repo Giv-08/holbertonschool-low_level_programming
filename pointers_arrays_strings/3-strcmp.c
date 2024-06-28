@@ -5,6 +5,7 @@
 * _strcmp - Compares two strings
 * @s1: - Task char '*s1' as parameter
 * @s2: - Task char '*s2' as parameter
+* Return: value of compared strings
 */
 
 int _strcmp(char *s1, char *s2)
