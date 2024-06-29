@@ -22,13 +22,12 @@ int _atoi(char *s)
 		s++;
 	}
 
-	if (*s == '-')
+	while (*s == '-' || *s == '+')
 	{
-		negative = 1;
-		s++;
-	}
-	else if (*s == '+')
-	{
+		if (*s == '-')
+		{
+		negative = !negative;
+		}
 		s++;
 	}
 
