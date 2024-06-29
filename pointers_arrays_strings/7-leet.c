@@ -17,19 +17,19 @@ char *leet(char *s)
 		{
 			*text = 4 + '0';
 		}
-		else if (*text == 'e' || *text == 'E')
+		if (*text == 'e' || *text == 'E')
                 {
                         *text = 3 + '0';
 		}
-		else if (*text == 'o' || *text == 'O')
+		if (*text == 'o' || *text == 'O')
                 {
                         *text = 0 + '0';
                 }
-		else if (*text == 't' || *text == 'T')
+		if (*text == 't' || *text == 'T')
                 {
                         *text = 7 + '0';
                 }
-		else if (*text == 'l' || *text == 'L')
+		if (*text == 'l' || *text == 'L')
                 {
                         *text = 1 + '0';
                 }
