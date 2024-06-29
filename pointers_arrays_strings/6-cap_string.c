@@ -10,18 +10,15 @@
 char *cap_string(char *s)
 {
         char *cap = s;
-	int index = 0;
 
         while (*cap != '\0')
         {
                 if (*cap >= 'a' && *cap <= 'z')
                 {
-			if (cap[index] == 0 )
-			{
-                        	*cap = *cap - 32;
-			}
+                       	*cap = *cap - 32;
                 }
                 cap++;
+		break;
         }
         return (s);
 }
