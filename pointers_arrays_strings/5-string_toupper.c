@@ -3,7 +3,7 @@
 
 /**
 * *string_toupper - changes all lowercase letters of a string to uppercase
-* @*: Take char '*' as strings
+* @s: Take char '*s' as strings
 * Return: s as original address
 */
 
