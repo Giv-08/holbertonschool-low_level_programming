@@ -13,7 +13,7 @@ char *leet(char *s)
 	
 	while (*text != '\0')
 	{
-		if (*text >= 'a' || *text >= 'A')
+		if (*text == 'a' || *text == 'A')
 		{
 			*text = *text + 1;
 		}
