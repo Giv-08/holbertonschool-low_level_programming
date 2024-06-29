@@ -13,28 +13,24 @@
 
 int _atoi(char *s)
 {
-	int sign = 1;
-	int output = 0;
 	int i = 0;
+	unsigned int output = 0;
+	int sign = 1;
+	int digit = 0;
 
-	if (s[0] == '-')
+	while (s[i])
 	{
-		sign = -1;
-		i++;
-	}
-
-	if (s[0] == '+')
-	{
-		i++;
-	}
-
-	while (s[i] != '\0')
-	{
-		if (s[i] <= '0' && s[i] >= '9')
+		if (s[i] == 45)
 		{
-			output = output * 10 + (s[i] - '0');
+			sign *= -1;
 		}
-		else
+		while (s[i] >= 48 && s[i] <= 57)
+		{
+			digit = 1;
+			output = (output * 10) + (s[i] - '0');
+			i++;
+		}
+		if (digit == 1)
 		{
 			break;
 		}
@@ -42,6 +38,6 @@ int _atoi(char *s)
 	}
 
 	output = output * sign;
-	return output;
+	return (output);
 }
 
