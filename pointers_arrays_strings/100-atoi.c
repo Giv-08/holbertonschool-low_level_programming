@@ -29,7 +29,7 @@ int _atoi(char *s)
 	}
 	else if (*s == '+')
 	{
-		s++;
+		is++;
 	}
 
 	while (*s >= '0' && *s <= 9)
@@ -39,9 +39,9 @@ int _atoi(char *s)
 		s++;
 	}
 
-	if (digit)
+	if (!digit)
 	{
-	return (0);
+		return (0);
 	}
 
 	if (negative)
