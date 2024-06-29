@@ -27,7 +27,7 @@ int _atoi(char *s)
 	{
 		if (s[i] < '0' || s[i] > 9)
 		{
-			text = *s;
+			text = *s - '0';
 			break;
 		}
 
