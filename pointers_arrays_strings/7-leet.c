@@ -15,7 +15,7 @@ char *leet(char *s)
 	{
 		if (*text == 'a' || *text == 'A')
 		{
-			*text = *text + 1;
+			*text = 1 + '0';
 		}
 		text++;
 	}
