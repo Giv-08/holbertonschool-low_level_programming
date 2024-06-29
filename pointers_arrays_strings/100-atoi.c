@@ -13,27 +13,35 @@
 
 int _atoi(char *s)
 {
-	int text = 0;
-	int symbol = 1;
-	int i = 0;
+	int output = 0;
+	int negative = 0;
 
-	if (s[0] == '-')
+	while (*s == ' ' || *s == '\t' || *s == '\n')
 	{
-		symbol = -1;
-		i++;
+		s++;
 	}
 
-	while (s[i] != '\0')
+	if (*s == '-')
 	{
-		if (s[i] < '0' || s[i] > 9)
-		{
-			text = *s - '0';
-			break;
-		}
-
-		text = text * 10 + (s[i] - '0');
-		i++;
+		negative = 1;
+		s++;
 	}
-	return (symbol * text);
+	else if (*s == '+')
+	{
+		s++;
+	}
+
+	while (*s >= '0' && *s <= 9)
+	{
+		output = output * 10 + (*s - '0');
+		s++;
+	}
+
+	if (negative)
+	{
+		output = -output;
+	}
+
+	return (output);
 }
 
