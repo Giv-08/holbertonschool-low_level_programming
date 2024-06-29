@@ -4,7 +4,7 @@
 /**
 * *leet - encodes a string into 1337
 * @s: Take char 's' as string
-* Return: s
+* Return: Always 0 (success)
 */
 
 char *leet(char *s)
@@ -17,6 +17,7 @@ char *leet(char *s)
 		{
 			*text = *text + 1;
 		}
+		text++;
 	}
-	return (s);
+	return (0);
 }
