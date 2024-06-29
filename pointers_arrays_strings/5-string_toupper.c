@@ -4,21 +4,21 @@
 /**
 * *string_toupper - changes all lowercase letters of a string to uppercase
 * @*: Take char '*' as strings
-* Return: Always 0 (success)
+* Return: s as original address
 */
 
 char *string_toupper(char *s)
 {
-	int i = 0;
+	char *pointer = s;
 
-	while (s[i] != '\0')
+	while (*pointer != '\0')
 	{
-		if (s[i] >= 'a' && s[i] <= 'z')
+		if (*pointer >= 'a' && *pointer <= 'z')
 		{
-			s[i] = s[i] - 32;
+			*pointer = *pointer - 32;
 		}
-		i++;
+		pointer++;
 	}
-	return (0);
+	return (s);
 
 }
