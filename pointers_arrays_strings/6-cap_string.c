@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
-* *string_toupper - capitalizes all words of a string
+* *cap_string - capitalizes all words of a string
 * @s: Take char '*s' as strings
 * Return: s as original address
 */
@@ -18,7 +18,7 @@ char *cap_string(char *s)
                        	*cap = *cap - 32;
                 }
                 cap++;
-		break;
+		continue;
         }
         return (s);
 }
