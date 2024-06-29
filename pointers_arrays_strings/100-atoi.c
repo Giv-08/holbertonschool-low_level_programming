@@ -22,10 +22,6 @@ int _atoi(char *s)
 		symbol = -1;
 		i++;
 	}
-	else if (s[0] == '+')
-	{
-		i++;
-	}
 
 	while (s[i] != '\0')
 	{
