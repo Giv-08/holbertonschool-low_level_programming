@@ -5,19 +5,20 @@
 * reverse_array - reverses the content of an array of integers
 * @a: an array of integers
 * @n: the number of elements to swap
-* Return: nothing.
 */
 
 void reverse_array(int *a, int n)
 {
-	int half = n / 2;
-	int i;
+	int *start = a;
+	int *end = a + n - 1;
+	int temp;
 
-	while (i < half)
+	while (start < end)
 	{
-		a[i] = a[(n - 1) - i];
-		i++;
+		temp = *start;
+		*start = *end;
+		*end = temp;
+		start++;
+		end--;
 	}
-
-	return;
 }
