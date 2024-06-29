@@ -13,11 +13,11 @@ char *leet(char *s)
 	
 	while (*text != '\0')
 	{
-		if (*ptr == 'a' || *ptr == 'A') *ptr = '4';
-		if (*ptr == 'e' || *ptr == 'E') *ptr = '3';
-		if (*ptr == 'o' || *ptr == 'O') *ptr = '0';
-		if (*ptr == 't' || *ptr == 'T') *ptr = '7';
-		if (*ptr == 'l' || *ptr == 'L') *ptr = '1';
+		if (*text == 'a' || *text == 'A') *text = '4';
+		if (*text == 'e' || *text == 'E') *text = '3';
+		if (*text == 'o' || *text == 'O') *text = '0';
+		if (*text == 't' || *text == 'T') *text = '7';
+		if (*text == 'l' || *text == 'L') *text = '1';
 		
 		text++;
 	}
