@@ -22,7 +22,7 @@ int _atoi(char *s)
         s++;
     }
 
-    while (*s == '-' || *s == '+')
+    while (*s == '-')
     {
         if (*s == '-')
         {
