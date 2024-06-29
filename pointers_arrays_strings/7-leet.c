@@ -10,30 +10,20 @@
 char *leet(char *s)
 {
 	char *text = s;
+	char map[256] = {0};
 	
+	map['a'] = map['A'] = '4';
+	map['e'] = map['E'] = '3';
+	map['o'] = map['O'] = '0';
+	map['t'] = map['T'] = '7';
+	map['l'] = map['L'] = '1';
+
 	while (*text != '\0')
 	{
-		if (*text == 'a' || *text == 'A')
-                {
-                        *text = 4 + '0';
-                }
-                if (*text == 'e' || *text == 'E')
-                {
-                        *text = 3 + '0';
-                }
-                if (*text == 'o' || *text == 'O')
-                {
-                        *text = 0 + '0';
-                }
-                if (*text == 't' || *text == 'T')
-                {
-                        *text = 7 + '0';
-                }
-                if (*text == 'l' || *text == 'L')
-                {
-                        *text = 1 + '0';
-                }
-		
+		if (map[(unsigned char)*text])
+		{
+			*text = map[(unsigned char)*text];
+		}
 		text++;
 	}
 	return (0);
