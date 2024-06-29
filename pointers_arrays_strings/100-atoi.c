@@ -29,7 +29,7 @@ int _atoi(char *s)
 	}
 	else if (*s == '+')
 	{
-		is++;
+		s++;
 	}
 
 	while (*s >= '0' && *s <= 9)
