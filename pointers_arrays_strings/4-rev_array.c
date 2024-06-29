@@ -15,10 +15,9 @@ void reverse_array(int *a, int n)
 
 	while (i < half)
 	{
-		a[i] = a[n - 1 - i];
+		a[i] = a[(n - 1) - i];
 		i++;
 	}
 
-	printf("%d\n", a[n - 1 - i]);
 	return;
 }
