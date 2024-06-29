@@ -11,7 +11,7 @@ char *leet(char *s)
 {
 	char *text = s;
 	char map[256] = {0};
-	
+
 	map['a'] = map['A'] = '4';
 	map['e'] = map['E'] = '3';
 	map['o'] = map['O'] = '0';
