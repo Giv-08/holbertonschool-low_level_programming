@@ -8,7 +8,7 @@
 
 void print_digits(int num)
 {
-    int digit;
+    unsigned int digit;
     if (num == 0) {
         return;
     }
