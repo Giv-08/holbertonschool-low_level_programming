@@ -19,8 +19,13 @@ void print_number(int n)
         }
     }
 
-    if (n / 10 != 0) {
-        print_number(n / 10);
+    int place_value = 1;
+    while (n / place_value >= 10) {
+        place_value *= 10;
     }
-    _putchar((n % 10) + '0');
+
+    while (place_value > 0) {
+        _putchar((n / place_value) % 10 + '0');
+        place_value /= 10;
+    }
 }
