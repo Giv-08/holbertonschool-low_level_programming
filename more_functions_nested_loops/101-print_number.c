@@ -8,26 +8,18 @@
 
 void print_number(int n)
 {
-	int place_value;
+	unsigned int d = n;
 
-    if (n < 0) {
-        _putchar('-');
+	if (n < 0)
+	{
+		_putchar(45);
+		d = -d;
+	}
 
-        if (n == -2147483648) {
-            _putchar('2');
-            n = 147483648;
-        } else {
-            n = -n;
-        }
-    }
+	if (d / 10)
+	{
+		print_number(d / 10);
+	}
 
-    place_value = 1;
-    while (n / place_value >= 10) {
-        place_value *= 10;
-    }
-
-    while (place_value > 0) {
-        _putchar((n / place_value) % 10 + '0');
-        place_value /= 10;
-    }
+	_putchar(d % 10 + '0');
 }
