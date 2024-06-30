@@ -8,6 +8,8 @@
 
 void print_number(int n)
 {
+	int place_value;
+
 	if (n < 0) {
         _putchar('-');
 
@@ -19,7 +21,7 @@ void print_number(int n)
         }
     }
 
-    int place_value = 1;
+    place_value = 1;
     while (n / place_value >= 10) {
         place_value *= 10;
     }
