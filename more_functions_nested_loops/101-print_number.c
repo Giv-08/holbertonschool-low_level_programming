@@ -10,7 +10,7 @@ void print_number(int n)
 {
 	int place_value;
 
-	if (n < 0) {
+    if (n < 0) {
         _putchar('-');
 
         if (n == -2147483648) {
