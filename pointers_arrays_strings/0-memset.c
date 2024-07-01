@@ -9,17 +9,16 @@
 * Return: 's' pointer to memory area
 */
 
-char *_memset(char *s, char b, unsigned int n);
+char *_memset(char *s, char b, unsigned int n)
 {
-	int i = 0;
-	unsigned char *mem = s;
+	unsigned char *a = (unsigned char *)s;
+	unsigned int i = 0;
 
-	while (n > 0)
+	while (i < n)
 	{
-		*s = c;
-		s++;
-		n--;
+		a[i] = (unsigned char)b;
+		i++;
 	}
-	printf("%c", mem);
+
 	return (s);
 }
