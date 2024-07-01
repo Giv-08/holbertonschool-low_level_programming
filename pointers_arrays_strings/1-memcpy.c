@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
-* *_memset - copies memory area
+* *_memcpy - copies memory area
 * @dest: Take char '*dest' as parameter
 * @src: Take char '*src' as parameter
 * @n: Take int 'n' as parameter
