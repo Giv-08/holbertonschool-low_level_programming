@@ -23,7 +23,7 @@ unsigned int _strspn(char *s, char *accept)
 		b = 0;
 		while (accept[b] != '\0')
 		{
-			if (s[i] == accept[b])
+			if (s[a] == accept[b])
 			{
 				counter++;
 				found = 1;
