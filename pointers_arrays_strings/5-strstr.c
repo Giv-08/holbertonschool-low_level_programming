@@ -5,7 +5,7 @@
 * *_strstr - locates a substring
 * @haystack: Take char 'haystack' as parameter
 * @needle: Take char 'needle' as parameter
-* Return: a pointer to the beginning of the located 
+* Return: a pointer to the beginning of the located
 * substring, or NULL if the substring is not found
 */
 
