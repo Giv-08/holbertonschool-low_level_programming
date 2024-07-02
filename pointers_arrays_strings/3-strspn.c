@@ -11,16 +11,17 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int count = 0;
+	unsigned int counter = 0;
 	char *ptr = accept;
 
 	while (*s != '\0')
 	{
+		ptr = 0;
 		while (*ptr != '\0')
 		{
 			if (*s == *ptr)
 			{
-				count++;
+				counter++;
 				break;
 			}
 			ptr++;
@@ -32,5 +33,5 @@ unsigned int _strspn(char *s, char *accept)
 		}
 		s++;
 	}
-	return (count);
+	return (counter);
 }
