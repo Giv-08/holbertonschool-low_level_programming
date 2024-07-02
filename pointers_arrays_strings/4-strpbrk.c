@@ -12,6 +12,7 @@
 char *_strpbrk(char *s, char *accept)
 {
 	char *a = accept;
+	int found = 0;
 
 	while (*s != '\0')
 	{
@@ -22,6 +23,10 @@ char *_strpbrk(char *s, char *accept)
 				return (s);
 			}
 			a++;
+		}
+		if (!found)
+		{
+			break;
 		}
 		s++;
 	}
