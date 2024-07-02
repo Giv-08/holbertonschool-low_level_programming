@@ -11,24 +11,33 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	char *a = accept;
-	int found = 0;
+	unsigned int a = 0;
+        unsigned int b = 0;
+        unsigned int counter = 0;
+        int loop = 1;
+        int found = 0;
 
-	while (*s != '\0')
-	{
-		while (*a != '\0')
-		{
-			if (*s == *a)
-			{
-				return (s);
-			}
-			a++;
-		}
-		if (!found)
-		{
-			break;
-		}
-		s++;
-	}
-	return (NULL);
+        while (s[a] != '\0' && loop == 1)
+        {
+                found = 0;
+                b = 0;
+                while (accept[b] != '\0')
+                {
+                       if (s[a] == accept[b])
+                       {
+                               counter++;
+                               found = 1;
+                       }
+                       b++;
+                }
+
+                if (!found)
+                {
+                        break;
+                }
+
+                a++;
+        }
+        return (s);
+
 }
