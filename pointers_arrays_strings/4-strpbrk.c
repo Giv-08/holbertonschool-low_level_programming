@@ -11,19 +11,15 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	char *ptr = accept;
-
-	while (*s != '\0')
-	{
-		while (*ptr != '\0')
-		{
-			if (*s == *ptr)
-			{
-				return(s);
-			}
-			ptr++;
-		}
-		s++;
-	}
-	return (NULL);
+	char *_strpbrk(char *s, char *accept) {
+    while (*s != '\0') {
+        
+        for (char *a = accept; *a != '\0'; ++a) {
+            if (*s == *a) {
+                return s;
+            }
+        }
+        ++s;
+    }
+    return NULL;
 }
