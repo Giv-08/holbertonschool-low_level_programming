@@ -25,5 +25,9 @@ char *_strpbrk(char *s, char *accept)
 		}
 		s++;
 	}
-	return (s);
+
+	if (*s == '\0')
+	{
+		return (NULL);
+	}
 }
