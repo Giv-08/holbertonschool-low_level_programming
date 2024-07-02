@@ -12,26 +12,28 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int counter = 0;
-	char *p, *a;;
+	char *p, *a;
+	p = s;
+	a = accept;
 
-	while (*s != '\0')
+	while (*p != '\0')
 	{
-		while (*ptr != '\0')
+		while (*a != '\0')
 		{
-			if (*ptr == *a)
+			if (*p == *a)
 			{
 				break;
 			}
-			ptr++;
+			a++;
 		}
-		s++;
-	}
+		p++;
 
 	if (*a == '\0')
 	{
 		break;
 	}
 	counter++;
+	}
 	return (counter);
 
 }
