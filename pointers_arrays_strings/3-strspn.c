@@ -20,17 +20,11 @@ unsigned int _strspn(char *s, char *accept)
 		{
 			if (*s == *ptr)
 			{
-				counter++;
-				break;
+				return (char *)s;
 			}
 			ptr++;
 		}
-		ptr = 0;
-		if (*ptr == '\0')
-		{
-			break;
-		}
 		s++;
 	}
-	return (counter);
+	return (NULL);
 }
