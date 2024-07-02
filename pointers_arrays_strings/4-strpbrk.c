@@ -19,17 +19,11 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (*s == *ptr)
 			{
-				s++;
-				ptr++;
+				return(s);
 			}
 			ptr++;
 		}
 		s++;
 	}
-
-	if (*s == '\0')
-	{
-		return (NULL);
-	}
-	return (s);
+	return (NULL);
 }
