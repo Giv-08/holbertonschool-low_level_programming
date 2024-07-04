@@ -4,16 +4,21 @@
 /**
  * _puts_recursion - prints a string, followed by a new line
  * @s: Take char 's' as parameter
+ * Return: nothing when string is empty
 */
 
 void _puts_recursion(char *s)
 {
 	if (*s == '\0')
-        {
-                return;
-        }
-
-	printf("%c", *s);
-	_puts_recursion(s + 1);
+	{
+		printf("\n");
+		return;
+	}
+	else
+	{
+		printf("%c", *s);
+		s++;
+		_puts_recursion(s);
+	}
 }
 
