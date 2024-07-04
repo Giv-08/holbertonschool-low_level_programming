@@ -3,7 +3,7 @@
 
 /**
  * factorial - returns the factorial of a given number
- * $n: Take int 'n' as parameter
+ * @n: Take int 'n' as parameter
  * Return: Always factorial of n
  */
 
