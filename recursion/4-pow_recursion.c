@@ -4,7 +4,7 @@
 /**
  * _pow_recursion - check the code
  * @x: Take int 'x' as parameter
- * @n: Take int 'n' as parameter
+ * @y: Take int 'y' as parameter
  * Return: -1 if y < 0i
 */
 
@@ -14,7 +14,7 @@ int _pow_recursion(int x, int y)
 	{
 		return (-1);
 	}
-	
+
 	if (y == 0)
 	{
 		return (1);
