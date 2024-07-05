@@ -3,7 +3,8 @@
 
 /**
  * main - check the code
- *
+ * @argc: Take int 'argc' as parameter
+ * @argv: Take char '*argv' as parameter
  * Return: Always 0.
  */
 int main(int argc, char *argv[])
