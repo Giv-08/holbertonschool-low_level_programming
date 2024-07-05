@@ -2,13 +2,13 @@
 #include <stdio.h>
 
 /**
- * sqrt_recursion - custom sqrt function
+ * sqrt_function - custom sqrt function
  * @num: Take int 'num' as parameter
- * @root : Take int 'root' as parameter
+ * @root: Take int 'root' as parameter
  * Return:  -1 if n does not have a natural square root
 */
 
-int sqrt_function (int num, int root)
+int sqrt_function(int num, int root)
 {
 	if ((root * root) > num)
 	{
@@ -21,7 +21,7 @@ int sqrt_function (int num, int root)
 	else
 	{
 		return (sqrt_function(num, root + 1));
-	}	
+	}
 }
 
 /**
@@ -32,14 +32,12 @@ int sqrt_function (int num, int root)
 
 int _sqrt_recursion(int n)
 {
-	
-
 	if (n < 0)
 	{
 		return (-1);
-	}	
+	}
 	else
 	{
-		return(sqrt_function(n, 0));
+		return (sqrt_function(n, 0));
 	}
 }
