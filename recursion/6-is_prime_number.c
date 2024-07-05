@@ -3,8 +3,9 @@
 
 /**
  * prime_number - check a prime number
- * @n: Take int 'n' as parameter
- * Return: returns 1 if the input integer 
+ * @num: Take int 'num' as parameter
+ * @div: Take int 'div' as parameter
+ * Return: returns 1 if the input integer
  * is a prime number, otherwise return 0
  */
 
@@ -27,7 +28,7 @@ int prime_number(int num, int div)
 /**
  * is_prime_number - check a prime number
  * @n: Take int 'n' as parameter
- * Return: returns 1 if the input integer 
+ * Return: returns 1 if the input integer
  * is a prime number, otherwise return 0
  */
 
@@ -38,7 +39,7 @@ int is_prime_number(int n)
 		return (0);
 	}
 	else
-	{	
+	{
 		return (prime_number(n, n - 1));
 	}
 }
