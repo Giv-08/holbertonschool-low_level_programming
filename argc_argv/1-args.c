@@ -9,12 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 1;
-
-	while (i < argc)
-	{
-		printf("%d\n", *argv[i]);
-		i++;
-	}
+	(void)argv;
+	printf("%d\n", argc - 1);
 	return (0);
 }
