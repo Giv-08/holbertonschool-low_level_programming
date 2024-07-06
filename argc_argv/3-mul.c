@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	int num_one = atoi(argv[1]);
 	int num_two = atoi(argv[2]);
 
-		if (argc < 2)
+		if (argc != 3)
 		{
 			printf("Error\n");
 			return (1);
