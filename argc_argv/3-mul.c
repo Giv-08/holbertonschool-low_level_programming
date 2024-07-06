@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - multiplies two numbers
@@ -12,20 +13,15 @@
 
 int main(int argc, char *argv[])
 {
-	int i = 0;
+	int num_one = atoi(argv[1]);
+	int num_two = atoi(argv[2]);
 
-	while (i < argc)
-	{
-		if (*argv[i] > 2)
+		if (argc < 2)
 		{
-			printf("%d\n", i * i);
-		}
-		else if (*argv[i] < 2)
-		{
-			printf("Error");
+			printf("Error\n");
 			return (1);
 		}
-		i++;
-	}
+
+	printf("%d\n", num_one * num_two);
 	return (0);
 }
