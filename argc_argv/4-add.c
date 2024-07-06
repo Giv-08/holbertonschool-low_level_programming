@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	
 	while (a < argc)
 	{
-		while (b < argc)
+		while (argv[a][b] != '\0')
 		{
 			if (!isdigit(argv[a][b]))
 			{
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 			b++;
 		}
 		a++;
-		total = atoi(argv[a]) + atoi(argv[a]);
+		total += atoi(argv[a]);
 	}
 
 	printf("%d\n", total);
