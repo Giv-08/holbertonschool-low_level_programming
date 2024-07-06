@@ -15,15 +15,18 @@ int main(int argc, char *argv[])
 {
 	char *ptr_one;
         char *ptr_two;
-	long num_one = strtol(argv[1], &ptr_one, 10);
-	long num_two = strtol(argv[2], &ptr_two, 10);
+	long num_one;
+	long num_two;
 
 	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	
+
+	num_one = strtol(argv[1], &ptr_one, 10);
+	num_two = strtol(argv[2], &ptr_two, 10);
+
 	if (*ptr_one != '\0' || *ptr_two != '\0')
 	{
 		printf("Error\n");
