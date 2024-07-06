@@ -18,13 +18,17 @@ int main(int argc, char *argv[])
 	int num_one = strtol(argv[1], &ptr_one, 10);
 	int num_two = strtol(argv[2], &ptr_two, 10);
 
-		if (argc != 3)
-		{
-			printf("Error\n");
-			return (1);
-		}
-
-
+	if (argc != 3)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	
+	if (*ptr_one != '\0' || *ptr_two != '\0')
+	{
+		printf("Error\n");
+		return (1);
+	}
 
 	printf("%d\n", num_one * num_two);
 	return (0);
