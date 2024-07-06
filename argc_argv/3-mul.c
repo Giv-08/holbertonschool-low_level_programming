@@ -13,14 +13,18 @@
 
 int main(int argc, char *argv[])
 {
-	int num_one = atoi(argv[1]);
-	int num_two = atoi(argv[2]);
+	char *ptr_one;
+        char *ptr_two;
+	int num_one = strtol(argv[1], &ptr_one, 10);
+	int num_two = strtol(argv[2], &ptr_two, 10);
 
 		if (argc != 3)
 		{
 			printf("Error\n");
 			return (1);
 		}
+
+
 
 	printf("%d\n", num_one * num_two);
 	return (0);
