@@ -9,12 +9,12 @@
  * Return: If the program does not receive two arguments,
  * your program should print Error, followed by a new line,
  * and return 1
- */
+*/
 
 int main(int argc, char *argv[])
 {
 	char *ptr_one;
-        char *ptr_two;
+	char *ptr_two;
 	long num_one;
 	long num_two;
 
