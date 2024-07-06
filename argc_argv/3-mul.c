@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
 {
 	char *ptr_one;
         char *ptr_two;
-	int num_one = strtol(argv[1], &ptr_one, 10);
-	int num_two = strtol(argv[2], &ptr_two, 10);
+	long num_one = strtol(argv[1], &ptr_one, 10);
+	long num_two = strtol(argv[2], &ptr_two, 10);
 
 	if (argc != 3)
 	{
@@ -30,6 +30,6 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	printf("%d\n", num_one * num_two);
+	printf("%ld\n", num_one * num_two);
 	return (0);
 }
