@@ -17,6 +17,8 @@ char *str_concat(char *s1, char *s2)
 	int j = 0;
 	char *full_string;
 
+
+
 	while (string_one[i] != '\0')
 	{	
 		i++;
@@ -32,7 +34,7 @@ char *str_concat(char *s1, char *s2)
 
 	if (full_string == NULL)
 	{
-		return (NULL);
+		return ("");
 	}
 
 	return (full_string);
