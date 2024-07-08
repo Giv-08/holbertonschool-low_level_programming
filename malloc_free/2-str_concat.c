@@ -50,4 +50,4 @@ char *str_concat(char *s1, char *s2)
 
 	full_string[i + k] = '\0';
 	return (full_string);
-i}
+}
