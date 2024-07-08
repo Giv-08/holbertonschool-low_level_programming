@@ -11,23 +11,16 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int i = 0;
-	int j = 0;
-	int k = 0;
+	int i, j, k = 0;
 	char *full_string;
 
-	if (s1 == NULL)
-	{
-		return ("");
-	}
-
-	if (s2 == NULL)
+	if (s1 == NULL || s2 == NULL)
 	{
 		return ("");
 	}
 
 	while (s1[i] != '\0')
-	{	
+	{
 		i++;
 	}
 
@@ -54,7 +47,6 @@ char *str_concat(char *s1, char *s2)
 		full_string[i + k] = s2[k];
 		k++;
 	}
-
 	full_string[i + j] = '\0';
 
 	return (full_string);
