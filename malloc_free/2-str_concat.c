@@ -41,6 +41,7 @@ char *str_concat(char *s1, char *s2)
 		full_string[k] = s1[k];
 		k++;
 	}
+	k = 0;
 
 	while (k < j)
 	{
