@@ -19,7 +19,7 @@ char *create_array(unsigned int size, char c)
 	{
 		return (NULL);
 	}
-	if (array == 0)
+	if (size == 0)
 	{
 		return (NULL);
 	}
