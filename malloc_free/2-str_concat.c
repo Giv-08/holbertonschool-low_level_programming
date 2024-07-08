@@ -22,17 +22,14 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-
 	while (s1[i] != '\0')
 	{
 		i++;
 	}
-
 	while (s2[j] != '\0')
 	{
 		j++;
 	}
-
 	full_string = malloc((i + j + 1) * sizeof(char));
 
 	if (full_string == NULL)
@@ -52,7 +49,6 @@ char *str_concat(char *s1, char *s2)
 		full_string[i + k] = s2[k];
 		k++;
 	}
-
 	full_string[i + k] = '\0';
 	return (full_string);
 }
