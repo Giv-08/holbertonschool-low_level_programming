@@ -44,10 +44,10 @@ char *str_concat(char *s1, char *s2)
 
 	while (k < j)
 	{
-		full_string[i + k] = s2[k];
+		full_string[i + j] = s2[k];
 		k++;
 	}
-	full_string[i + j] = '\0';
 
+	full_string[i + k] = '\0';
 	return (full_string);
 }
