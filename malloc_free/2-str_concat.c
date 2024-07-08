@@ -15,9 +15,13 @@ char *str_concat(char *s1, char *s2)
 	char *string_two = s2;
 	int i = 0;
 	int j = 0;
+	int k = 0;
 	char *full_string;
 
-
+	if (string_one == NULL || string_two == NULL)
+	{
+		return ("");
+	}
 
 	while (string_one[i] != '\0')
 	{	
@@ -29,13 +33,25 @@ char *str_concat(char *s1, char *s2)
 		j++;
 	}
 
-
 	full_string = malloc(i + j + 1);
 
 	if (full_string == NULL)
 	{
-		return ("");
+		return (NULL);
 	}
+
+	while (k < i)
+	{
+		full_string[k] = string_one[k];
+		k++;
+	}
+
+	while (k < j)
+	{
+		full_string[i + k] = string_two[k];
+	}
+
+	full_string[i + j] = '\0';
 
 	return (full_string);
 }
