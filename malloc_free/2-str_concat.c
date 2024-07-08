@@ -18,6 +18,11 @@ char *str_concat(char *s1, char *s2)
 	{
 		return ("");
 	}
+	
+	if (s1 == "" || s2 == "")
+	{
+		return (NULL);
+	}
 
 	while (s1[i] != '\0')
 	{
