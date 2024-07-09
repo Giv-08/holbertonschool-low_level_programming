@@ -11,7 +11,7 @@
 
 int **alloc_grid(int width, int height)
 {
-	int i = 0, j = 0;
+	int i = 0, j;
 	int **array_pointer;
 
 	if (height > 0 && width > 0)
