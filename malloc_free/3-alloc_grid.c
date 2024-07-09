@@ -20,7 +20,7 @@ int **alloc_grid(int width, int height)
 
         if ( array_pointer != NULL )
         {
-            while ( i < height && ( array_pointer[i] = calloc( width, sizeof( int ) ) ) != NULL )
+            while ( i < height && ( array_pointer[i] = malloc( width, sizeof( int ) ) ) != NULL )
             {
                 ++i;
             }
