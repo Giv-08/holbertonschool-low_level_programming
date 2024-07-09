@@ -4,8 +4,8 @@
 
 /**
  * **alloc_grid - a pointer to a 2 dimensional array of integers
- * @width: Take int 'height' as parameter
- * @heigth: Take int 'width' as parameter
+ * @width: Take int 'width' as parameter
+ * @height: Take int 'height' as parameter
  * Return: return NULL on failure
 */
 
@@ -19,7 +19,7 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	}
 
-	array = malloc(sizeof(int*) * height);
+	array = malloc(sizeof(int *) * height);
 
 	if (array == NULL)
 	{
@@ -36,10 +36,9 @@ int **alloc_grid(int width, int height)
 				free(array[j]);
 				j++;
 			}
-			free(array);
 			return (NULL);
 		}
-
+		free(array);
 		while (j < width)
 		{
 			array[i][j] = 0;
