@@ -25,10 +25,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s2[len_two] != '\0')
 		len_two++;
 
-	if (n >= len_two)
+	if (n > len_two)
 		n = len_two;
-	
-	full_string = malloc(sizeof(char *) * (len_one + n + 1));
+
+	full_string = malloc(sizeof(char) * (len_one + n + 1));
 	if (full_string == NULL)
 		return (NULL);
 	while (i < len_one)
