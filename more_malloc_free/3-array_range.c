@@ -6,7 +6,7 @@
  * *array_range - creates an array of integers
  * @min: take int 'min' as parameter
  * @max: take int 'max' as parameter
- * Return; If malloc fails, return NULL
+ * Return: If malloc fails, return NULL
  */
 
 int *array_range(int min, int max)
