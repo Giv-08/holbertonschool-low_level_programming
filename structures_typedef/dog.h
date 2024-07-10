@@ -10,7 +10,7 @@
  * Description: Longer description of the struct if needed.
  */
 
-struct Dog
+struct dog
 {
 	char *name;
 	float age;
