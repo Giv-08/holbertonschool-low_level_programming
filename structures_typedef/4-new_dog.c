@@ -10,7 +10,24 @@
  * @owner: Take char 'owner' as parameter
  * Return: NULL if the function fails
  */
+char *_strdup(const char *str)
+{
+	char *dup;
+	int len = 0, i = 0;
 
+    while (str[len])
+        len++;
+
+    dup = malloc(len + 1);
+    if (dup == NULL)
+        return (NULL);
+    while (i <= len)
+    {
+        dup[i] = str[i];
+	i++;
+    }
+    return (dup);
+}
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
@@ -28,7 +45,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 			return (NULL);
 		}
 	}
-	new_dog->name = strdup(name);
+	new_dog->name = _strdup(name);
 
 	new_dog->owner = malloc(sizeof(dog_t));
 	{
@@ -37,7 +54,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 			return (NULL);
 		}
 	}
-	new_dog->owner = strdup(owner);
+	new_dog->owner = _strdup(owner);
 
 	new_dog->age = age;
 	return (new_dog);
