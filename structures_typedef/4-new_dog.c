@@ -2,11 +2,13 @@
 #include "dog.h"
 #include <stdlib.h>
 #include <string.h>
+
 /**
  * *_strdup - custom strdup function
  * @str: Take char 'str' as parameter
  * Return: cpy
  */
+
 char *_strdup(char *str)
 {
 	char *cpy;
@@ -24,6 +26,7 @@ char *_strdup(char *str)
 	}
 	return (cpy);
 }
+
 /**
  * *new_dog - creates a new dog
  * @name: Take name 'name' as parameter
@@ -31,28 +34,29 @@ char *_strdup(char *str)
  * @owner: Take char 'owner' as parameter
  * Return: NULL if the function fails
  */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
 
 	new_dog = malloc(sizeof(dog_t));
 	if (new_dog == NULL)
-	{
 		return (NULL);
-		free(new_dog);
-	}
-	new_dog->name = malloc(sizeof(dog_t));
-		if (new_dog->name == NULL)
-			return (NULL);
+
 	new_dog->name = _strdup(name);
-	new_dog->owner = malloc(sizeof(dog_t));
-		if (new_dog->owner == NULL)
-		{
-			free(new_dog->name);
-			free(new_dog);
-			return (NULL);
-		}
+	if (new_dog->name == NULL)
+	{
+		free(new_dog);
+		return (NULL);
+	}
+
 	new_dog->owner = _strdup(owner);
+	if (new_dog->owner == NULL)
+	{
+		free(new_dog->name);
+		free(new_dog);
+		return (NULL);
+	}
 	new_dog->age = age;
 	return (new_dog);
 }
