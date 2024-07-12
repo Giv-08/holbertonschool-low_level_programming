@@ -4,7 +4,7 @@
 
 /**
  * free_dog - free the dogs
- * @d - take dog_t 'd' as parameter
+ * @d: pointer to the dog_t structure to be freed
  */
 
 void free_dog(dog_t *d)
