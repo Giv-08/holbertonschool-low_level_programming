@@ -4,6 +4,8 @@
 
 /**
  * *argstostr - concatenates all the arguments of your program
+ * @ac: take int 'ac' as parameter
+ * @av: take char 'av' as parameter
  * Return: a pointer to a new string, or NULL if it fails
  */
 
@@ -41,10 +43,10 @@ char *argstostr(int ac, char **av)
 			j++;
 		}
 		if (i < ac - 1)
-        	{
+		{
 			arg[p] = '\n';
 			p++;
-        	}
+		}
 	}
 	arg[p] = '\0';
 	return (arg);
