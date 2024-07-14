@@ -39,12 +39,9 @@ char *argstostr(int ac, char **av)
             arg[position] = av[i][j];
             position++;
             j++;
+	    arg[position] = '\n';
         }
-        if (i < ac - 1)
-        {
-            arg[position] = ' ';
-            position++;
-        }
+        
     }
     arg[position] = '\0';
 
