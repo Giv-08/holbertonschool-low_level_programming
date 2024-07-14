@@ -33,42 +33,47 @@ int count_words(char *str)
 
 char *copy_word(char *start, int length)
 {
-    char *word = malloc((length + 1) * sizeof(char));
+	char *word;
+	int i = 0;
+	word = malloc((length + 1) * sizeof(char));
     if (!word)
     {
         return NULL;
     }
 
-    for (int i = 0; i < length; i++)
+    while (i < length)
     {
         word[i] = start[i];
+	i++;
     }
     word[length] = '\0';
 
     return word;
 }
 
-// The main function to split the string into words
 char **strtow(char *str)
 {
+	char **words;
+	char *word_start;
+	int num_words, index = 0, word_length = 0, i = 0;
+
     if (str == NULL || *str == '\0')
     {
         return NULL;
     }
 
-    int num_words = count_words(str);
+	num_words = count_words(str);
     if (num_words == 0)
     {
         return NULL;
     }
 
-    char **words = malloc((num_words + 1) * sizeof(char *));
+	words = malloc((num_words + 1) * sizeof(char *));
     if (!words)
     {
         return NULL;
     }
 
-    int index = 0;
     while (*str)
     {
         while (*str && isspace(*str))
@@ -76,8 +81,7 @@ char **strtow(char *str)
             str++;
         }
 
-        char *word_start = str;
-        int word_length = 0;
+	word_start = str;
 
         while (*str && !isspace(*str))
         {
@@ -90,9 +94,10 @@ char **strtow(char *str)
             words[index] = copy_word(word_start, word_length);
             if (!words[index])
             {
-                for (int i = 0; i < index; i++)
+                while (i < index)
                 {
                     free(words[i]);
+		    i++;
                 }
                 free(words);
                 return NULL;
