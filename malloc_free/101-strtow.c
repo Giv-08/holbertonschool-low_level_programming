@@ -1,12 +1,10 @@
 #include <stdlib.h>
 #include "main.h"
-
 /**
  * count_word - count the number of words in a string
  * @s: take char 's' as parameter
  * Return: number of words
  */
-
 int count_word(char *s)
 {
 	int flag = 0, count = 0, words = 0;
@@ -22,17 +20,14 @@ int count_word(char *s)
 		}
 		s++;
 	}
-
 	return (words);
 }
-
 /**
  * **strtow - splits a string into words
  * @str: take char 'str' as parameter
  * Return: pointer to an array of strings (Success)
  * or NULL (Error)
  */
-
 char **strtow(char *str)
 {
 	char **matrix, *temp;
@@ -40,22 +35,15 @@ char **strtow(char *str)
 	int word_start, word_end;
 
 	while (*(str + length))
-	{
 		length++;
-	}
-
 	words = count_word(str);
 	if (words == 0)
-	{
 		return (NULL);
-	}
 
 	matrix = (char **)malloc(sizeof(char *) * (words + 1));
 
 	if (matrix == NULL)
-	{
 		return (NULL);
-	}
 	while (i <= length)
 	{
 		if (str[i] == ' ' || str[i] == '\0')
@@ -65,13 +53,9 @@ char **strtow(char *str)
 				word_end = i;
 				temp = (char *) malloc(sizeof(char) * (count + 1));
 				if (temp == NULL)
-				{
 					return (NULL);
-				}
 				while (word_start < word_end)
-				{
 					*temp++ = str[word_start++];
-				}
 				*temp = '\0';
 				matrix[j] = temp - count;
 				j++;
@@ -79,13 +63,9 @@ char **strtow(char *str)
 			}
 		}
 		else if (count++ == 0)
-		{
 			word_start = i;
-		}
 		i++;
 	}
-
 	matrix[j] = NULL;
-
 	return (matrix);
 }
