@@ -1,111 +1,91 @@
-#include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
+#include "main.h"
 
 /**
- * **strtow - split a string into words
- * @str: Take char 'str' as parameter
- * Return: NULL if function fails
+ * count_word - count the number of words in a string
+ * @s: take char 's' as parameter
+ * Return: number of words
  */
 
-int count_words(char *str)
+int count_word(char *s)
 {
-    int count = 0;
-    int in_word = 0;
+	int flag = 0, count = 0, words = 0;
 
-    while (*str)
-    {
-        if (isspace(*str))
-        {
-            in_word = 0;
-        }
-        else if (!in_word)
-        {
-            in_word = 1;
-            count++;
-        }
-        str++;
-    }
+	while (s[count] != '\0')
+	{
+		if (s[count] == ' ')
+			flag = 0;
+		else if (flag == 0)
+		{
+			flag = 1;
+			words++;
+		}
+		s++;
+	}
 
-    return count;
+	return (words);
 }
 
-char *copy_word(char *start, int length)
-{
-	char *word;
-	int i = 0;
-	word = malloc((length + 1) * sizeof(char));
-    if (!word)
-    {
-        return NULL;
-    }
-
-    while (i < length)
-    {
-        word[i] = start[i];
-	i++;
-    }
-    word[length] = '\0';
-
-    return word;
-}
+/**
+ * **strtow - splits a string into words
+ * @str: take char 'str' as parameter
+ * Return: pointer to an array of strings (Success)
+ * or NULL (Error)
+ */
 
 char **strtow(char *str)
 {
-	char **words;
-	char *word_start;
-	int num_words, index = 0, word_length = 0, i = 0;
+	char **matrix, *temp;
+	int i = 0, j = 0, length = 0, words, count = 0;
+	int word_start, word_end;
 
-    if (str == NULL || *str == '\0')
-    {
-        return NULL;
-    }
+	while (*(str + length))
+	{
+		length++;
+	}
 
-	num_words = count_words(str);
-    if (num_words == 0)
-    {
-        return NULL;
-    }
+	words = count_word(str);
+	if (words == 0)
+	{
+		return (NULL);
+	}
 
-	words = malloc((num_words + 1) * sizeof(char *));
-    if (!words)
-    {
-        return NULL;
-    }
+	matrix = (char **)malloc(sizeof(char *) * (words + 1));
 
-    while (*str)
-    {
-        while (*str && isspace(*str))
-        {
-            str++;
-        }
+	if (matrix == NULL)
+	{
+		return (NULL);
+	}
+	while (i <= length)
+	{
+		if (str[i] == ' ' || str[i] == '\0')
+		{
+			if (count)
+			{
+				word_end = i;
+				temp = (char *) malloc(sizeof(char) * (count + 1));
+				if (temp == NULL)
+				{
+					return (NULL);
+				}
+				while (word_start < word_end)
+				{
+					*temp++ = str[word_start++];
+				}
+				*temp = '\0';
+				matrix[j] = temp - count;
+				j++;
+				count = 0;
+			}
+		}
+		else if (count++ == 0)
+		{
+			word_start = i;
+		}
+		i++;
+	}
 
-	word_start = str;
+	matrix[j] = NULL;
 
-        while (*str && !isspace(*str))
-        {
-            str++;
-            word_length++;
-        }
-
-        if (word_length > 0)
-        {
-            words[index] = copy_word(word_start, word_length);
-            if (!words[index])
-            {
-                while (i < index)
-                {
-                    free(words[i]);
-		    i++;
-                }
-                free(words);
-                return NULL;
-            }
-            index++;
-        }
-    }
-
-    words[index] = NULL;
-    return words;
+	return (matrix);
 }
