@@ -2,7 +2,7 @@
 #include "function_pointers.h"
 
 /**
- * array_ierator - executes a function given
+ * array_iterator - executes a function given
  * as a parameter on each element of an array
  * @array: name of the person
  * @size: size of array
