@@ -12,32 +12,31 @@
 
 int main(int argc, char *argv[])
 {
-	int a, b, result;
-	char *operator;
-	int (*operation)(int, int);
+        int a, b;
+        char *operator;
+        int result;
+        int (*operation)(int, int);
 
-	if (argc != 4)
-	{
-		printf("Error\n");
-		return (98);
-	}
+        if (argc != 4)
+        {
+                printf("Error\n");
+                exit(98);
+        }
 
- 	a = atoi(argv[1]);
- 	operator = argv[2];
- 	b = atoi(argv[3]);
+        operator = argv[2];
+        a = atoi(argv[1]);
+        b = atoi(argv[3]);
 
- 	if ((strlen(operator) == 1 && strchr("+-*/%", operator[0]) != NULL) &&
-        !((operator[0] == '/' || operator[0] == '%') && b == 0)) 
-	{
-		operation = get_op_func(operator);
+        if ((strlen(operator) == 1 && strchr("+-*/%", operator[0]) != NULL) &&
+	!((operator[0] == '/' || operator[0] == '%') && b == 0))
+        {
+        	operation = get_op_func(operator);
 		if (operation != NULL)
 		{
 			result = operation(a, b);
-			printf("%d\n", result);
-			return 0;
+			return (0);
 		}
 	}
-
 	printf("Error\n");
-	return (operator[0] == '/' || operator[0] == '%') ? 100 : 99;
+	return (operator[0] == '/' || operator == '%') ? 100 : 99;
 }
