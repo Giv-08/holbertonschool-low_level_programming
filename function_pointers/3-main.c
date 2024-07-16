@@ -2,8 +2,6 @@
 #include "3-calc.h"
 #include <stdlib.h>
 #include <string.h>
-#include "3-get_op_func.c"
-#include "3-op_functions.c"
 
 /**
  * main - check the code
@@ -14,31 +12,32 @@
 
 int main(int argc, char *argv[])
 {
-	int a, b;
-	char *s;
-	int result;
+	int a, b, result;
+	char *operator;
+	int (*operation)(int, int);
 
-	if (argc < 4)
+	if (argc != 4)
 	{
 		printf("Error\n");
-		exit(98);
+		return (98);
 	}
 
-	s = argv[2];
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
+ 	a = atoi(argv[1]);
+ 	operator = argv[2];
+ 	b = atoi(argv[3]);
 
-	if (s[0] != argv[2][0])
+ 	if ((strlen(operator) == 1 && strchr("+-*/%", operator[0]) != NULL) &&
+        !((operator[0] == '/' || operator[0] == '%') && b == 0)) 
 	{
-		printf("Error\n");
-		exit(99);
+		operation = get_op_func(operator);
+		if (operation != NULL)
+		{
+			result = operation(a, b);
+			printf("%d\n", result);
+			return 0;
+		}
 	}
 
-	if ((s[0] == '/' || s[0] == '%') && b == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-	result = ops.f(a, b);
-	return (0);
+	printf("Error\n");
+	return (operator[0] == '/' || operator[0] == '%') ? 100 : 99;
 }
