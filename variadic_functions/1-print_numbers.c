@@ -22,9 +22,17 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		return;
 	}
 
+	
 	while (i < n)
 	{
-		printf("%d%s ", va_arg(list, int), separator);
+		if (i < n)
+		{
+			printf("%d%s", va_arg(list, int), separator);
+			if (i == n - 2)
+			{
+				printf("%d", va_arg(list, int));
+			}
+		}
 		i++;
 	}
 	printf("\n");
