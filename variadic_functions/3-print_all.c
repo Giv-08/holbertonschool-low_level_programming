@@ -71,13 +71,13 @@ void print_all(const char * const format, ...)
 	va_list lists;
 
 	va_start(lists, format);
-	
+
 	while (format[i] && format)
 	{
 		j = 0;
 		while (fmt[j].data_type)
 		{
-			if (fmt[j].data_type == format[i])
+			if (fmt[j].data_type == format[i] && format)
 			{
 				printf("%s", separator);
 				fmt[j].print(&lists);
