@@ -72,10 +72,6 @@ void print_all(const char * const format, ...)
 
 	va_start(lists, format);
 	
-	if (format == NULL)
-	{
-		return;
-	}
 	while (format[i] && format)
 	{
 		j = 0;
