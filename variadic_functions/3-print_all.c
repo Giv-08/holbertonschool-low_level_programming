@@ -2,25 +2,26 @@
 #include "variadic_functions.h"
 #include "stdarg.h"
 
-void print_char(va_list *list)
+void print_char(va_list *lists)
 {
-	printf("%c", va_arg(*list, int));
+	printf("%c", va_arg(*lists, int));
 }
-void print_integer(va_list *list)
+void print_integer(va_list *lists)
 {
-	printf("%d", va_arg(*list, int));
+	printf("%d", va_arg(*lists, int));
 }
-void print_float(va_list *list)
+void print_float(va_list *lists)
 {
-	printf("%f", va_arg(*list, double));
+	printf("%f", va_arg(*lists, double));
 }
-void print_str(va_list *list)
+void print_str(va_list *lists)
 {
-	char *data_type = va_arg(*list, char *);
+	char *data_type = va_arg(*lists, char *);
 
 	if (data_type == NULL)
 	{
 		printf("(nil)");
+		return;
 	}
 		printf("%s", data_type);
 }
@@ -34,7 +35,7 @@ void print_str(va_list *list)
 void print_all(const char * const format, ...)
 {
 	int i = 0, j = 0;
-	char *separator;
+	char *separator = "";
 
 	fm fmt[] = {
 	{'c', print_char},
@@ -48,13 +49,13 @@ void print_all(const char * const format, ...)
 
 	va_start(lists, format);
 
-	while (format[i] != '\0')
+	while (format[i] && format)
 	{
 		while (fmt[j].data_type == format[i])
 		{
-			separator = ", ";
 			printf("%s", separator);
 			fmt[j].print(&lists);
+			separator = ", ";
 			break;
 			j++;
 		}
