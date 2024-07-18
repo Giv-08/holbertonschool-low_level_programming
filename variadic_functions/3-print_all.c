@@ -21,10 +21,7 @@ void print_str(va_list *list)
 	{
 		printf("(nil)");
 	}
-	else
-	{
-		printf("%s", data_type);
-	}
+		return(printf("%s", data_type));
 }
 
 /**
