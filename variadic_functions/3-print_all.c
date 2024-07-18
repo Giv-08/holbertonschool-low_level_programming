@@ -17,11 +17,12 @@ void print_float(va_list *list)
 void print_str(va_list *list)
 {
 	char *data_type = va_arg(*list, char *);
+
 	if (data_type == NULL)
 	{
 		printf("(nil)");
 	}
-		return(printf("%s", data_type));
+		printf("%s", data_type);
 }
 
 /**
@@ -44,6 +45,7 @@ void print_all(const char * const format, ...)
 	};
 
 	va_list lists;
+
 	va_start(lists, format);
 
 	while (format[i] != '\0')
