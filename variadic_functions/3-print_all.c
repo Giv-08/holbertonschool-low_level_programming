@@ -72,12 +72,12 @@ void print_all(const char * const format, ...)
 
 	va_start(lists, format);
 
-	while (format[i] && format)
+	while (format[i] && format != NULL)
 	{
 		j = 0;
 		while (fmt[j].data_type)
 		{
-			if (fmt[j].data_type == format[i] && format)
+			if (fmt[j].data_type == format[i])
 			{
 				printf("%s", separator);
 				fmt[j].print(&lists);
