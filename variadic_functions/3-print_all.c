@@ -2,18 +2,34 @@
 #include "variadic_functions.h"
 #include "stdarg.h"
 
+/**
+ * print_char - prints characters
+ * @lists: A va_list pointing to the character to print
+ */
 void print_char(va_list *lists)
 {
 	printf("%c", va_arg(*lists, int));
 }
+/**
+ * print_integer - prints integers
+ * @lists: A va_list pointing to the character to print
+ */
 void print_integer(va_list *lists)
 {
 	printf("%d", va_arg(*lists, int));
 }
+/**
+ * print_float - prints floats
+ * @lists: A va_list pointing to the character to print
+ */
 void print_float(va_list *lists)
 {
 	printf("%f", va_arg(*lists, double));
 }
+/**
+ * print_str - prints strings
+ * @lists: A va_list pointing to the character to print
+ */
 void print_str(va_list *lists)
 {
 	char *data_type = va_arg(*lists, char *);
@@ -34,7 +50,7 @@ void print_str(va_list *lists)
 
 void print_all(const char * const format, ...)
 {
-	int i = 0, j = 0;
+	int i = 0, j;
 	char *separator = "";
 
 	fm fmt[] = {
@@ -51,6 +67,7 @@ void print_all(const char * const format, ...)
 
 	while (format[i] && format)
 	{
+		j = 0;
 		while (fmt[j].data_type)
 		{
 			if (fmt[j].data_type == format[i])
