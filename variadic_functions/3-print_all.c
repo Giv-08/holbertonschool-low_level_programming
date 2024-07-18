@@ -65,14 +65,14 @@ void print_all(const char * const format, ...)
 	{'i', print_integer},
 	{'f', print_float},
 	{'s', print_str},
-	{'\0', NULL}
+	{NULL, NULL}
 	};
 
 	va_list lists;
 
 	va_start(lists, format);
 
-	while (format[i] && format != NULL)
+	while (format[i] && format)
 	{
 		j = 0;
 		while (fmt[j].data_type)
@@ -82,7 +82,6 @@ void print_all(const char * const format, ...)
 				printf("%s", separator);
 				fmt[j].print(&lists);
 				separator = ", ";
-				break;
 			}
 			j++;
 		}
