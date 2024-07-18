@@ -6,30 +6,37 @@
  * print_char - prints characters
  * @lists: A va_list pointing to the character to print
  */
+
 void print_char(va_list *lists)
 {
 	printf("%c", va_arg(*lists, int));
 }
+
 /**
  * print_integer - prints integers
  * @lists: A va_list pointing to the character to print
  */
+
 void print_integer(va_list *lists)
 {
 	printf("%d", va_arg(*lists, int));
 }
+
 /**
  * print_float - prints floats
  * @lists: A va_list pointing to the character to print
  */
+
 void print_float(va_list *lists)
 {
 	printf("%f", va_arg(*lists, double));
 }
+
 /**
  * print_str - prints strings
  * @lists: A va_list pointing to the character to print
  */
+
 void print_str(va_list *lists)
 {
 	char *data_type = va_arg(*lists, char *);
@@ -64,7 +71,11 @@ void print_all(const char * const format, ...)
 	va_list lists;
 
 	va_start(lists, format);
-
+	
+	if (format == NULL)
+	{
+		return;
+	}
 	while (format[i] && format)
 	{
 		j = 0;
