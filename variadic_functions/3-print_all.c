@@ -51,12 +51,15 @@ void print_all(const char * const format, ...)
 
 	while (format[i] && format)
 	{
-		while (fmt[j].data_type == format[i])
+		while (fmt[j].data_type)
 		{
-			printf("%s", separator);
-			fmt[j].print(&lists);
-			separator = ", ";
-			break;
+			if (fmt[j].data_type == format[i])
+			{
+				printf("%s", separator);
+				fmt[j].print(&lists);
+				separator = ", ";
+				break;
+			}
 			j++;
 		}
 		i++;
