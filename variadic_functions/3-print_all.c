@@ -18,11 +18,11 @@ void print_str(va_list *lists)
 {
 	char *data_type = va_arg(*lists, char *);
 
-	if (data_type == NULL)
+	if (!data_type)
 	{
-                printf("(nil)");
-        }
-                printf("%s", data_type);
+		printf("(nil)");
+	}
+	printf("%s", data_type);
 }
 
 /**i
@@ -33,26 +33,26 @@ void print_str(va_list *lists)
 
 void print_all(const char * const format, ...)
 {
-        int i = 0, j;
-        char *separator;
+	int i = 0, j = 0;
+	char *separator;
 
-        fm fmt[] = {
-        {'c', print_char},
-        {'i', print_integer},
-        {'f', print_float},
-        {'s', print_str},
-        {'\0', NULL}
-        };
+	fm fmt[] = {
+	{'c', print_char},
+	{'i', print_integer},
+	{'f', print_float},
+	{'s', print_str},
+	{0, NULL}
+	};
 
-        va_list lists;
+	va_list lists;
 
-        va_start(lists, format);
+	va_start(lists, format);
 
-        while (format[i] != '\0' && format != NULL)
-        {
+	while (format[i] && format)
+	{
 		j = 0;
-                while (fmt[j].data_type != '\0')
-                {
+		while (fmt[j].data_type)
+		{
 			if (fmt[j].data_type == format[i])
 			{
 				printf("%s", separator);
@@ -60,9 +60,9 @@ void print_all(const char * const format, ...)
 				separator = ", ";
 			}
 			j++;
-                }
-                i++;
-        }
-        printf("\n");
-        va_end(lists);
+		}
+		i++;
+	}
+	printf("\n");
+	va_end(lists);
 }
