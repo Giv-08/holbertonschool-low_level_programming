@@ -59,7 +59,7 @@ void print_all(const char * const format, ...)
 {
 	const char *p = format;
 	char *str;
-	int i = 0;
+	int i;
 	char c;
 	float f;
 	char *separator;
