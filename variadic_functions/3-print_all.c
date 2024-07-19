@@ -16,16 +16,16 @@ void print_float(va_list *lists)
 }
 void print_str(va_list *lists)
 {
-	char *data_type = va_arg(*lists, char *);
+	char *str = va_arg(*lists, char *);
 
-	if (!data_type)
+	if (str == NULL)
 	{
 		printf("(nil)");
 	}
-	printf("%s", data_type);
+	printf("%s", str);
 }
 
-/**i
+/**
  * print_all - prints anything, followed by a new line
  * @format: take any format as a parameter
  * Return: Always 0.
@@ -41,7 +41,7 @@ void print_all(const char * const format, ...)
 	{'i', print_integer},
 	{'f', print_float},
 	{'s', print_str},
-	{0, NULL}
+	{'\0', NULL}
 	};
 
 	va_list lists;
