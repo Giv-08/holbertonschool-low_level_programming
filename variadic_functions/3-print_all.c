@@ -53,11 +53,11 @@ void print_all(const char * const format, ...)
 		j = 0;
                 while (fmt[j].data_type)
                 {
-                        separator = ", ";
-                        printf("%s", separator);
-                        fmt[j].print(&lists);
-                        break;
-                        j++;
+			printf("%s", separator);
+			fmt[j].print(&lists);
+			separator = ", ";
+			break;
+			j++;
                 }
                 i++;
         }
