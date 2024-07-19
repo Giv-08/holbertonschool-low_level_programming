@@ -4,28 +4,28 @@
 
 void print_char(va_list *lists)
 {
-        printf("%c", va_arg(*lists, int));
+	printf("%c", va_arg(*lists, int));
 }
 void print_integer(va_list *lists)
 {
-        printf("%d", va_arg(*lists, int));
+	printf("%d", va_arg(*lists, int));
 }
 void print_float(va_list *lists)
 {
-        printf("%f", va_arg(*lists, double));
+	printf("%f", va_arg(*lists, double));
 }
 void print_str(va_list *lists)
 {
-        char *data_type = va_arg(*lists, char *);
+	char *data_type = va_arg(*lists, char *);
 
-        if (data_type == NULL)
-        {
+	if (data_type == NULL)
+	{
                 printf("(nil)");
         }
                 printf("%s", data_type);
 }
 
-/**
+/**i
  * print_all - prints anything, followed by a new line
  * @format: take any format as a parameter
  * Return: Always 0.
@@ -48,10 +48,10 @@ void print_all(const char * const format, ...)
 
         va_start(lists, format);
 
-        while (format[i] != '\0')
+        while (format[i] && format)
         {
 		j = 0;
-                while (fmt[j].data_type == format[i])
+                while (fmt[j].data_type)
                 {
                         separator = ", ";
                         printf("%s", separator);
