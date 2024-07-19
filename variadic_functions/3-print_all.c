@@ -58,26 +58,38 @@ void print_str(va_list *lists)
 void print_all(const char * const format, ...)
 {
 	const char *p = format;
+	char *str;
+	int i = 0;
+	char c;
+	float f;
 
 	va_list lists;
 
 	va_start(lists, format);
-
-	switch (*p){
-		case 'd':
-		printf("%d", va_arg(lists, int));
-		break;
-		case 'c':
-		printf("%c", va_arg(lists, int));
-		break;
-		case 'f':
-		printf("%f", va_arg(lists, double));
-		break;
-		case 's':
-		printf("%s", va_arg(lists, const char *));
-		break;
-		case '0':
-		break;
+	while (p != NULL && *p != '\0')
+	{
+		switch (*p){
+			case 'c':
+				c = va_arg(lists, int);
+				printf("%c", c);
+				break;
+			case 'i':
+				i = va_arg(lists, int);
+				printf("%c", i);
+				break;
+			case 'f':
+				f = va_arg(lists, double);
+				printf("%f", f);
+				break;
+			case 's':
+				str = va_arg(lists, char *);
+				if (str != NULL)
+				{
+					printf("%s", str);
+				}
+				break;
+		}
+		p++;
 	}
 	printf("\n");
 	va_end(lists);
