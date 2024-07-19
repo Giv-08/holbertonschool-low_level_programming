@@ -41,11 +41,11 @@ void print_str(va_list *lists)
 {
 	char *str = va_arg(*lists, char *);
 
-	if (str == NULL)
+	if (str != NULL)
 	{
-		printf("(nil)");
+		printf("%s", str);
 	}
-	printf("%s", str);
+	printf("(nil)");
 }
 
 /**
