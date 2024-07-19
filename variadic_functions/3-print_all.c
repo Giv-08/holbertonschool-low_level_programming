@@ -59,7 +59,7 @@ void print_all(const char * const format, ...)
 {
 	const char *p = format;
 	char *str;
-	int i;
+	int i = 0, flag = 0;
 	char c;
 	float f;
 	char *separator;
@@ -69,6 +69,10 @@ void print_all(const char * const format, ...)
 	va_start(lists, format);
 	while (p != NULL && *p != '\0')
 	{
+		if (flag)
+		{
+			flag = 0;
+		}
 		switch (*p){
 			case 'c':
 				c = va_arg(lists, int);
@@ -93,6 +97,7 @@ void print_all(const char * const format, ...)
 		separator = ", ";
 		printf("%s", separator);
 		p++;
+		flag = 1;
 	}
 	printf("\n");
 	va_end(lists);
