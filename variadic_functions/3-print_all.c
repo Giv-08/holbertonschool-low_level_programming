@@ -57,7 +57,7 @@ void print_str(va_list *lists)
 
 void print_all(const char * const format, ...)
 {
-	int i = 0, j = 0;
+	int i = 0, j;
 	char *separator;
 
 	fm fmt[] = {
@@ -74,6 +74,7 @@ void print_all(const char * const format, ...)
 
 	while (format[i] != '\0')
 	{
+		j = 0;
 		while (fmt[j].data_type == format[i])
 		{
 			separator = ", ";
