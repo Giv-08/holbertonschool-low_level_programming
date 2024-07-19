@@ -57,31 +57,29 @@ void print_all(const char * const format, ...)
 {
 	int i = 0, j = 0;
 	char *separator = "";
-	const char *f = format;
 
 	fm fmt[] = {
 	{'c', print_char},
 	{'i', print_integer},
 	{'f', print_float},
 	{'s', print_str},
-	{'\0', NULL}
+	{0, NULL}
 	};
 
 	va_list lists;
 
 	va_start(lists, format);
 
-	while (f != NULL && f[i] != '\0')
+	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
 		while (fmt[j].data_type)
 		{
-			if (fmt[j].data_type == f[i])
+			if (fmt[j].data_type == format[i])
 			{
 				printf("%s", separator);
 				fmt[j].print(&lists);
 				separator = ", ";
-				break;
 			}
 			j++;
 		}
