@@ -57,54 +57,33 @@ void print_str(va_list *lists)
 
 void print_all(const char * const format, ...)
 {
+	int i = 0, j = 0;
+	char *separator;
+
+	fm fmt[] = {
+	{'c', print_char},
+	{'i', print_integer},
+	{'f', print_float},
+	{'s', print_str},
+	{'\0', NULL}
+	};
+
 	va_list lists;
-	const char *p = format;
-	char *str;
-	int i;
-	char c;
-	float f;
-	int flag = 1;
 
 	va_start(lists, format);
 
-	while (p != NULL && *p != '\0')
+	while (format[i] != '\0')
 	{
-		switch (*p)
+		while (fmt[j].data_type == format[i])
 		{
-			case 'c':
-			case 'i':
-			case 'f':
-			case 's':
-				if (flag)
-				{
-					flag = 0;
-				}
-				break;
+			separator = ", ";
+			printf("%s", separator);
+			fmt[j].print(&lists);
+			break;
+			j++;
 		}
-
-	switch (*p)
-	{
-		case 'c':
-			c = va_arg(lists, int);
-			printf("%c", c);
-			break;
-		case 'i':
-			i = va_arg(lists, int);
-			printf("%d", i);
-			break;
-		case 'f':
-			f = (float)va_arg(lists, double);
-			printf("%f", f);
-			break;
-		case 's':
-			str = va_arg(lists, char *);
-			printf("%s", str ? str : "(nil)");
-			break;
+		i++;
 	}
-	printf(", ");
-	p++;
-	}
-
 	printf("\n");
 	va_end(lists);
 }
