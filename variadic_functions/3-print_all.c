@@ -87,11 +87,11 @@ void print_all(const char * const format, ...)
 				if (str != NULL)
 				{
 					printf("%s", str);
-					separator = ", ";
-                        		printf("%s", separator);
 				}
 				break;
 		}
+		separator = ", ";
+		printf("%s", separator);
 		p++;
 	}
 	printf("\n");
