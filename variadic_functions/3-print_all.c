@@ -79,10 +79,6 @@ void print_all(const char * const format, ...)
 				{
 					flag = 0;
 				}
-				else
-				{
-					printf(", ");
-				}
 				break;
 		}
 
@@ -105,6 +101,7 @@ void print_all(const char * const format, ...)
 			printf("%s", str ? str : "(nil)");
 			break;
 	}
+	printf(", ");
 	p++;
 	}
 
