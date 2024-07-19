@@ -62,6 +62,7 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	char c;
 	float f;
+	char *separator;
 
 	va_list lists;
 
@@ -86,6 +87,8 @@ void print_all(const char * const format, ...)
 				if (str != NULL)
 				{
 					printf("%s", str);
+					separator = ", ";
+                        		printf("%s", separator);
 				}
 				break;
 		}
