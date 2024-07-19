@@ -34,7 +34,7 @@ void print_str(va_list *lists)
 void print_all(const char * const format, ...)
 {
 	int i = 0, j = 0;
-	char *separator;
+	char *separator = "";
 
 	fm fmt[] = {
 	{'c', print_char},
