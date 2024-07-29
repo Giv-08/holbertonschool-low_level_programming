@@ -9,6 +9,8 @@
 
 size_t print_list(const list_t *h)
 {
+	char *str;
+
 	if (str == NULL)
 	{
 		_putchar
