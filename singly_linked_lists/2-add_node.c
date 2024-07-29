@@ -7,7 +7,7 @@
  * add_node - prints all the elements of a list_t list
  * @head: take 'head' as argument
  * @str: take 'str' as argument
- * Return: the address of the new element, 
+ * Return: the address of the new element,
  * or NULL if it failed
  */
 
@@ -25,7 +25,7 @@ list_t *add_node(list_t **head, const char *str)
 	{
 		return (NULL);
 	}
-	
+
 	new->str = strdup(str);
 	new->len = length;
 	new->next = (*head);
