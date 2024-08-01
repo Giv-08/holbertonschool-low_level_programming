@@ -2,6 +2,7 @@
 #define VARIADIC_FUNCTIONS_H
 
 #include <stdarg.h>
+#include <stddef.h>
 
 /**
  * struct dlistint_s - doubly linked list
