@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 /**
- * create_textfile - creates a file
+ * create_file - creates a file
  * @filename: take char 'filename' as parameter
  * @text_content: take 'text_content' as parameter
  * Return: 1 on success,if filename is NULL return -1
@@ -27,7 +27,7 @@ int create_file(const char *filename, char *text_content)
 	}
 	if (text_content == NULL)
 	{
-		write(file, "", *text_content);
+		return (-1);
 	}
 	else
 	{
