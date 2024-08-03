@@ -27,12 +27,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	b_read = read(file, buffer, letters);
-	if (b_read == NULL)
+	if (b_read == -1)
 	{
 		return (0);
 	}
 	b_write = write(STDOUT_FILENO, buffer, b_read);
-	if (b_write == NULL)
+	if (b_write != b_read)
 	{
 		return (0);
 	}
