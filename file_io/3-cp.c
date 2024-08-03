@@ -43,12 +43,3 @@ void _copy(char *ff, char *ft)
 	if (close(file_from) == -1 || close(file_to) == -1)
 		err_exit("Error: Can't close fd %d\n", ff, 100);
 }
-int main(int argc, char *argv[])
-{
-        if (argc != 3)
-        {
-                dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
-        }
-        _copy(argv[1],argv[2]);
-        return (0);
-}
