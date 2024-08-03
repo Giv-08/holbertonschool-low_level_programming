@@ -2,6 +2,16 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+int main(int argc, char *argv[])
+{
+    if (argc != 3)
+    {
+        dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+        exit(97);
+    }
+    _copy(argv[1], argv[2]);
+    return (0);
+}
 
 void err_exit (char *str, char *file, int code)
 {
