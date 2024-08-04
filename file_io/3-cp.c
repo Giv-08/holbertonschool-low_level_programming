@@ -8,7 +8,7 @@
  * @file: take 'file' as parameter
  * @code: take 'code' as parameter
 */
-void err_exit(char *str, char *file, int code)
+void err_exit(const char *str, const char *file, int code)
 {
 	dprintf(STDERR_FILENO, str, file);
 	exit(code);
@@ -20,7 +20,7 @@ void err_exit(char *str, char *file, int code)
  * Return: 1 on success,if filename is NULL return -1
 */
 
-void _copy(char *ff, char *ft)
+void _copy(const char *ff, const char *ft)
 {
     int file_from, file_to;
     ssize_t b_read, b_write;
