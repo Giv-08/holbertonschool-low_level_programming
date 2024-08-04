@@ -22,8 +22,9 @@ void err_exit(const char *str, const char *file, int code)
 
 void _copy(const char *ff, const char *ft)
 {
-	int file_from, file_to, size = 1024;
-	ssize_t b_write = 0;
+	int file_from, file_to;
+	ssize_t size = 1024;
+	ssize_t b_write;
 	char buffer[1024];
 
 	file_from = open(ff, O_RDONLY);
@@ -38,17 +39,20 @@ void _copy(const char *ff, const char *ft)
 		err_exit("Error: Can't write to %s\n", ft, 99);
 	}
 
-	while (size != 0)
+	while (size > 0)
 	{
-		size = read(file_from, buffer, 1024);
+		size = read(file_from, buffer, sizeof(buffer));
 		if (size < 0)
 		{
 			err_exit("Error: Can't read from file %s\n", ff, 98);
 		}
-		b_write = write(file_to, buffer, size);
-		if (b_write < 0)
+		if (size > 0)
 		{
-			err_exit("Error: Can't write to %s\n", ft, 99);
+			b_write = write(file_to, buffer, size);
+			if (b_write < 0)
+			{
+				err_exit("Error: Can't write to %s\n", ft, 99);
+			}
 		}
 	}
 	if (close(file_from) == -1)
