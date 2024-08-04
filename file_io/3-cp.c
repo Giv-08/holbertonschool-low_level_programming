@@ -23,9 +23,9 @@ void err_exit(const char *str, const char *file, int code)
 void _copy(const char *ff, const char *ft)
 {
         int file_from, file_to;
-        ssize_t size = 1024;
-        ssize_t b_write;
-        char buffer[1024];
+        int size = 1024;
+        int b_write = 0;
+        int *buffer[1024];
 
         file_from = open(ff, O_RDONLY);
         if (file_from == -1)
