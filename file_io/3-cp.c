@@ -22,44 +22,51 @@ void err_exit(const char *str, const char *file, int code)
 
 void _copy(const char *ff, const char *ft)
 {
-	int file_from, file_to;
-	ssize_t size = 1024;
-	ssize_t b_write;
-	char buffer[1024];
+    int file_from, file_to;
+    ssize_t size;
+    char buffer[1024];
 
-	file_from = open(ff, O_RDONLY);
-	if (file_from == -1)
-	{
-		err_exit("Error: Can't read from file %s\n", ff, 98);
-	}
+    file_from = open(ff, O_RDONLY);
+    if (file_from == -1)
+    {
+        err_exit("Error: Can't read from file %s\n", ff, 98);
+    }
 
-	file_to = open(ft, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-	if (file_to == -1)
-	{
-		err_exit("Error: Can't write to %s\n", ft, 99);
-	}
+    file_to = open(ft, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+    if (file_to == -1)
+    {
+        close(file_from);
+        err_exit("Error: Can't write to %s\n", ft, 99);
+    }
 
-	while (size > 0)
-	{
-		size = read(file_from, buffer, sizeof(buffer));
-		if (size < 0)
-		{
-			err_exit("Error: Can't read from file %s\n", ff, 98);
-		}
-		if (size > 0)
-		{
-			b_write = write(file_to, buffer, size);
-			if (b_write < 0)
-			{
-				err_exit("Error: Can't write to %s\n", ft, 99);
-			}
-		}
-	}
-	if (close(file_from) == -1)
-		err_exit("Error: Can't close fd %d\n", ff, 100);
+    while ((size = read(file_from, buffer, sizeof(buffer))) > 0)
+    {
+        if (write(file_to, buffer, size) != size)
+        {
+            close(file_from);
+            close(file_to);
+            err_exit("Error: Can't write to %s\n", ft, 99);
+        }
+    }
 
-	if (close(file_to) == -1)
-		err_exit("Error: Can't close fd %d\n", ft, 100);
+    if (size == -1)
+    {
+        close(file_from);
+        close(file_to);
+        err_exit("Error: Can't read from file %s\n", ff, 98);
+    }
+
+    if (close(file_from) == -1)
+    {
+        dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+        exit(100);
+    }
+
+    if (close(file_to) == -1)
+    {
+        dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
+        exit(100);
+    }
 }
 /**
  * main - main function
