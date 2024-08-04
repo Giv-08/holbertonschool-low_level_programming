@@ -1,69 +1,71 @@
-#include "main.h"
-#include <stdlib.h>
-#include <unistd.h>
+#include <fcntl.h>
 #include <stdio.h>
-/**
- * err_exit - function for dprintf
- * @str: take char 'str' as parameter
- * @file: take 'file' as parameter
- * @code: take 'code' as parameter
-*/
-void err_exit(const char *str, const char *file, int code)
-{
-	dprintf(STDERR_FILENO, str, file);
-	exit(code);
-}
-/**
- * _copy - copy content from one file to another
- * @ff: take char 'ff' as parameter
- * @ft: take 'ft' as parameter
- * Return: 1 on success,if filename is NULL return -1
-*/
+#include <stdlib.h>
+#include "main.h"
+#include <unistd.h>
 
+/**
+ * main - check the code
+ * @argc: no. of params
+ * @argv: array of params
+ *
+ * Return: Always 0.
+ */
 int main(int argc, char *argv[])
 {
-        char *file_one, *file_two;
-	int file_from, file_to;
-        int size = 1024;
-        int b_write = 0;
-        int *buffer[1024];
+	char *fone, *ftwo;
+	int fdone, fdtwo, sz = 1024, wr = 0, *buffer[1024];
 
-	file_one = argv[1];
-	file_two = argv[2];
-        if (argc != 3)
-        {
-                dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-                exit(97);
-        }
-        file_from = open(file_one, O_RDONLY);
-        if (file_from == -1)
-        {
-                err_exit("Error: Can't read from file %s\n", file_one, 98);
-        }
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
 
-        file_to = open(file_two, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-        if (file_to == -1)
-        {
-                err_exit("Error: Can't write to %s\n", file_two, 99);
-        }
+	fone = argv[1];
+	ftwo = argv[2];
+	fdone = open(fone, O_RDONLY);
+	fdtwo = open(ftwo, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
-        while (size != 0)
-        {
-                size = read(file_from, buffer, 1024);
-                if (size < 0)
-                {
-                        err_exit("Error: Can't read from file %s\n", file_one, 98);
-                }
-		b_write = write(file_to, buffer, size);
-                if (b_write < 0)
-                {
-			err_exit("Error: Can't write to %s\n", file_two, 99);
-                }
-        }
-        if (close(file_from) == -1)
-                err_exit("Error: Can't close fd %d\n", file_one, 100);
+	if (fdone < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", fone);
+		exit(98);
+	}
+	if (fdtwo < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", ftwo);
+		exit(99);
+	}
 
-        if (close(file_to) == -1)
-                err_exit("Error: Can't close fd %d\n", file_two, 100);
+	while (sz != 0)
+	{
+		sz = read(fdone, buffer, 1024);
+		if (sz < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", fone);
+			exit(98);
+		}
+		
+		wr = write(fdtwo, buffer, sz);
+		if (wr < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", ftwo);
+			exit(99);
+		}
+	}
+
+	if (close(fdone) < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdone);
+		exit(100);
+	}
+
+	if (close(fdtwo) < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdtwo);
+		exit(100);
+	}
+
 	return (0);
 }
