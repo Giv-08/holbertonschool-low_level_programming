@@ -22,44 +22,46 @@ void err_exit(const char *str, const char *file, int code)
 
 void _copy(const char *ff, const char *ft)
 {
-    int file_from, file_to;
-    ssize_t b_read, b_write;
-    char buffer[1024];
+	int file_from, file_to;
+	ssize_t b_read, b_write;
+	char buffer[1024];
 
-    file_from = open(ff, O_RDONLY);
-    if (file_from == -1)
-        err_exit("Error: Can't read from file %s\n", ff, 98);
+	file_from = open(ff, O_RDONLY);
+	if (file_from == -1)
+	{
+		err_exit("Error: Can't read from file %s\n", ff, 98);
+	}
 
-    file_to = open(ft, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-    if (file_to == -1)
-    {
-        close(file_from);
-        err_exit("Error: Can't write to %s\n", ft, 99);
-    }
+	file_to = open(ft, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	if (file_to == -1)
+	{
+		close(file_from);
+		err_exit("Error: Can't write to %s\n", ft, 99);
+	}
 
-    while ((b_read = read(file_from, buffer, sizeof(buffer))) > 0)
-    {
-        b_write = write(file_to, buffer, b_read);
-        if (b_write != b_read)
-        {
-            close(file_from);
-            close(file_to);
-            err_exit("Error: Can't write to %s\n", ft, 99);
-        }
-    }
+	while ((b_read = read(file_from, buffer, sizeof(buffer))) > 0)
+	{
+		b_write = write(file_to, buffer, b_read);
+		if (b_write != b_read)
+		{
+			close(file_from);
+			close(file_to);
+			err_exit("Error: Can't write to %s\n", ft, 99);
+		}
+	}
 
-    if (b_read == -1)
-    {
-        close(file_from);
-        close(file_to);
-        err_exit("Error: Can't read from %s\n", ff, 98);
-    }
+	if (b_read == -1)
+	{
+		close(file_from);
+		close(file_to);
+		err_exit("Error: Can't read from %s\n", ff, 98);
+	}
 
-    if (close(file_from) == -1)
-        err_exit("Error: Can't close fd %d\n", ff, 100);
+	if (close(file_from) == -1)
+		err_exit("Error: Can't close fd %d\n", ff, 100);
 
-    if (close(file_to) == -1)
-        err_exit("Error: Can't close fd %d\n", ft, 100);
+	if (close(file_to) == -1)
+		err_exit("Error: Can't close fd %d\n", ft, 100);
 }
 /**
  * main - main function
