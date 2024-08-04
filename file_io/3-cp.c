@@ -36,11 +36,6 @@ void _copy(char *ff, char *ft)
 		close(file_from);
 		err_exit("Error: Can't write from file %s\n", ft, 99);
 	}
-	b_write = write(file_to, buffer, 100);
-	if (b_write == -1)
-	{
-		err_exit("Error: Can't write to %s\n", ft, 99);
-	}
 
 	b_read = read(file_from, buffer, sizeof(buffer));
 	while (b_read > 0)
