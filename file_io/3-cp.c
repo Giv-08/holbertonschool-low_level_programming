@@ -38,10 +38,10 @@ void _copy(const char *ff, const char *ft)
 		err_exit("Error: Can't write to %s\n", ft, 99);
 	}
 
-	while ((b_read = read(file_from, buffer, sizeof(buffer))) > 0)
+	while ((b_read = read(file_from, buffer, 1024)) != 0)
 	{
 		b_write = write(file_to, buffer, b_read);
-		if (b_write != b_read)
+		if (b_write < 0)
 		{
 			err_exit("Error: Can't write to %s\n", ft, 99);
 		}
