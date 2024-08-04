@@ -35,7 +35,6 @@ void _copy(const char *ff, const char *ft)
 	file_to = open(ft, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (file_to == -1)
 	{
-		close(file_from);
 		err_exit("Error: Can't write to %s\n", ft, 99);
 	}
 
@@ -44,16 +43,12 @@ void _copy(const char *ff, const char *ft)
 		b_write = write(file_to, buffer, b_read);
 		if (b_write != b_read)
 		{
-			close(file_from);
-			close(file_to);
 			err_exit("Error: Can't write to %s\n", ft, 99);
 		}
 	}
 
 	if (b_read == -1)
 	{
-		close(file_from);
-		close(file_to);
 		err_exit("Error: Can't read from %s\n", ff, 98);
 	}
 
