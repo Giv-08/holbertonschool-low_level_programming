@@ -1,7 +1,9 @@
 #include <fcntl.h>
-#include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <string.h>
 /**
  * err_exit - Function to handle errors
  * @str: Format string for the error message
