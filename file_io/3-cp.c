@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
-
 /**
  * err_exit - Function to handle errors
  * @str: Format string for the error message
@@ -14,14 +13,7 @@ void err_exit(const char *str, const char *file, int code)
 	dprintf(STDERR_FILENO, str, file);
 	exit(code);
 }
-void close_file(int fd, const char *file)
-{
-	if (close(fd) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d: %s\n", fd, strerror(errno));
-		exit(100);
-	}
-}
+
 /**
  * main - main function
  * @argc: take 'argc' as parameter
@@ -62,7 +54,5 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100);
 	}
-	close_file(file_from, argv[1]);
-	close_file(file_to, argv[2]);
 	return (0);
 }
