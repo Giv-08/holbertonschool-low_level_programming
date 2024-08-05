@@ -49,14 +49,18 @@ int main(int argc, char *argv[])
         if (write(file_to, buffer, size) != size)
         {
             dprintf(STDERR_FILENO, "Error: Can't write to %s: %s\n", argv[2], strerror(errno));
-            exit(99);
+            close(file_from);
+	    close(file_to);
+	    exit(99);
         }
     }
 
     if (size == -1)
     {
         dprintf(STDERR_FILENO, "Error: Can't read from file %s: %s\n", argv[1], strerror(errno));
-        exit(98);
+        close(file_from);
+	close(file_to);
+	exit(98);
     }
 
     close_file(file_from);
