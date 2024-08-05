@@ -14,6 +14,14 @@ void err_exit(const char *str, const char *file, int code)
 	dprintf(STDERR_FILENO, str, file);
 	exit(code);
 }
+void close_file(int fd, const char *file)
+{
+	if (close(fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d: %s\n", fd, strerror(errno));
+		exit(100);
+	}
+}
 /**
  * main - main function
  * @argc: take 'argc' as parameter
@@ -40,9 +48,7 @@ int main(int argc, char *argv[])
 	while ((size = read(file_from, buffer, sizeof(buffer))) > 0)
 	{
 		if (write(file_to, buffer, size) != size)
-		{
 			err_exit("Error: Can't write to %s\n", argv[2], 99);
-		}
 	}
 	if (size == -1)
 		err_exit("Error: Can't read from file %s\n", argv[1], 98);
@@ -51,14 +57,12 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
-	else
-		return (0);
 	if (close(file_to) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100);
 	}
-	else
-		return (0);
+	close_file(file_from, argv[1]);
+	close_file(file_to, argv[2]);
 	return (0);
 }
