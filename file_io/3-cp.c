@@ -39,22 +39,15 @@ int main(int argc, char *argv[])
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to == -1)
 	{
-		close(file_from);
 		err_exit("Error: Can't write to %s\n", argv[2], 99);
 	}
 	while ((size = read(file_from, buffer, sizeof(buffer))) > 0)
 	{
 		if (write(file_to, buffer, size) != size)
-		{
-			close(file_from);
-			close(file_to);
 			err_exit("Error: Can't write to %s\n", argv[2], 99);
-		}
 	}
 	if (size == -1)
 	{
-		close(file_from);
-		close(file_to);
 		err_exit("Error: Can't read from file %s\n", argv[1], 98);
 	}
 	if (close(file_from) == -1)
@@ -67,5 +60,5 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100);
 	}
-	exit (0);
+	return (0);
 }
